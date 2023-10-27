@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: ChristianKrauter.github.io//sitemap.xml
+Sitemap: www.chriskrauter.de//sitemap.xml
