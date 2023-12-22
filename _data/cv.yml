@@ -1,10 +1,8 @@
-- title: General Information
+- title: Basics
   type: map
   contents:
-    - name: Full Name
-      value: Christian Andreas Krauter
-    - name: Date of Birth
-      value: 1st September 1994
+    - name: Name
+      value: Christian Krauter
     - name: Languages
       value: German, English
 
@@ -13,7 +11,10 @@
   contents:
     - title: PhD Student
       institution: University of Stuttgart, Stuttgart, Germany
-      year: 2023 - PRESENT
+      year: Oct 2023 - now
+    - title: PhD Student
+      institution: University of Cologne, Cologne, Germany
+      year: Feb 2023 - Aug 2023
     - title: M.Sc. Computer Science
       institution: University of Stuttgart, Stuttgart, Germany
       year: 2022
@@ -24,3 +25,35 @@
       year: 2019
       description:
         - "Thesis: Exploring Notiﬁcation Presentation in Virtual Reality"
+
+- title: Academic experience
+  type: time_table
+  contents:
+    - title: Employee in technology and administration
+      institution: University of Cologne, Cologne, Germany
+      year: Oct 2022 - Feb 2023
+    - title: Student research assistant
+      institution: University of Cologne, Cologne, Germany
+      year: Apr 2021 - Sep 2022
+    - title: Tutor for human-computer interaction
+      institution: University of Stuttgart, Stuttgart, Germany
+      year: Apr 2018 – Sep 2018
+    - title: Student assistant at the "BTW" conference
+      institution: University of Stuttgart, Stuttgart, Germany
+      year: Mar 2017
+    - title: Tutor for mediainformatics
+      institution: University of Stuttgart, Stuttgart, Germany
+      year: Oct 2016 – Mar 2017
+
+- title: Industry experience
+  type: time_table
+  contents:
+    - title: Working student in software development
+      institution: Valeo Germany
+      year: Feb 2019 - Aug 2020
+    - title: Part-time job in warehouse and shipping
+      institution: Mindvent GmbH
+      year: Sep 2013 - Mar 2016
+    - title: Part-time job in bicycle assembly and customer service
+      institution: Fahrrad Imle
+      year: May 2011 - May 2013
