@@ -5,23 +5,25 @@
       value: Christian Krauter
     - name: Languages
       value: German, English
+    - name: Interests
+      value: Human-Computer Interaction, Augmented/Virtual Reality, Information Visualization, Motorcycles, Plants
 
 - title: Education
   type: time_table
   contents:
     - title: PhD Student
-      institution: University of Stuttgart, Stuttgart, Germany
+      institution: University of Stuttgart
       year: Oct 2023 - now
     - title: PhD Student
-      institution: University of Cologne, Cologne, Germany
+      institution: University of Cologne
       year: Feb 2023 - Aug 2023
     - title: M.Sc. Computer Science
-      institution: University of Stuttgart, Stuttgart, Germany
+      institution: University of Stuttgart
       year: 2022
       description:
         - "Thesis: Designing the next smart chair based on a posture recognition and feedback literature review"
     - title: B.Sc. Mediainformatics
-      institution: University of Stuttgart, Stuttgart, Germany
+      institution: University of Stuttgart
       year: 2019
       description:
         - "Thesis: Exploring Notiﬁcation Presentation in Virtual Reality"
@@ -30,19 +32,19 @@
   type: time_table
   contents:
     - title: Employee in technology and administration
-      institution: University of Cologne, Cologne, Germany
+      institution: University of Cologne
       year: Oct 2022 - Feb 2023
     - title: Student research assistant
-      institution: University of Cologne, Cologne, Germany
+      institution: University of Cologne
       year: Apr 2021 - Sep 2022
     - title: Tutor for human-computer interaction
-      institution: University of Stuttgart, Stuttgart, Germany
+      institution: University of Stuttgart
       year: Apr 2018 – Sep 2018
     - title: Student assistant at the "BTW" conference
-      institution: University of Stuttgart, Stuttgart, Germany
+      institution: University of Stuttgart
       year: Mar 2017
     - title: Tutor for mediainformatics
-      institution: University of Stuttgart, Stuttgart, Germany
+      institution: University of Stuttgart
       year: Oct 2016 – Mar 2017
 
 - title: Industry experience
