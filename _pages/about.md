@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: PhD candidate in HCI, AR, and InfoVis
+subtitle: Ph.D. candidate in HCI, AR, and InfoVis
 
 profile:
   align: left
@@ -19,4 +19,4 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-My research interests cover Human-Computer Interaction (HCI), information visualization, and Augmented and Virtual Reality (AR/VR), which I aim to combine during my PhD studies. I acquired my Bachelor's in media informatics and my Master's in computer science here at the University of Stuttgart. My previous work covered notification placement in VR (bachelor thesis), an immersive social distancing VR demo, and a smart chair for sitting posture recognition and feedback (master thesis).
+My research interests cover Human-Computer Interaction (HCI), information visualization, and Augmented and Virtual Reality (AR/VR), which I aim to combine during my PhD studies. I acquired my Bachelor's in media informatics and my Master's in computer science at the University of Stuttgart, where I am now also pursuing my Ph.D. My previous work covered notification placement in VR (bachelor thesis), an immersive social distancing VR demo, and a smart chair for sitting posture recognition and feedback (master thesis).
