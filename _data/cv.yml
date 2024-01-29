@@ -6,17 +6,14 @@
     - name: Languages
       value: German, English
     - name: Interests
-      value: Human-Computer Interaction, Augmented/Virtual Reality, Information Visualization, Motorcycles, Plants
+      value: Human-Computer Interaction, Augmented/Virtual Reality, Information Visualization, Motorcycles, Plants, Mechanical Keyboards
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD Student
+    - title: PhD Candidate
       institution: University of Stuttgart
       year: Oct 2023 - now
-    - title: PhD Student
-      institution: University of Cologne
-      year: Feb 2023 - Aug 2023
     - title: M.Sc. Computer Science
       institution: University of Stuttgart
       year: 2022
@@ -31,6 +28,9 @@
 - title: Academic experience
   type: time_table
   contents:
+    - title: Research Assistant
+      institution: University of Cologne
+      year: Feb 2023 - Aug 2023
     - title: Employee in technology and administration
       institution: University of Cologne
       year: Oct 2022 - Feb 2023
