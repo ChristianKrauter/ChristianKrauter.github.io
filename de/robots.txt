@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: www.chriskrauter.de/de/sitemap.xml
