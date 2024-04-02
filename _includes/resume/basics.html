@@ -1,9 +1,9 @@
 <table class="table table-cv table-sm table-borderless table-responsive table-cv-map">
   {% assign skip_basics = "image,profiles,location" | split:"," %}
   {% for content in data[1] %}
-    {% if (content[1] == "") or (skip_basics contains content[0]) %}
-      {% continue %}
-    {% endif %}
+  {% if (content[1] == "") or (skip_basics contains content[0]) %}
+  {% continue %}
+  {% endif %}
 
   <tr>
     <td class="p-1 pr-2 font-weight-bold"><b>{{ content[0] | capitalize }}</b></td>
