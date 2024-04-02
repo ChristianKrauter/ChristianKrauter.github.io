@@ -102,8 +102,7 @@ discord_id: # your discord id (18-digit unique numerical identifier)
 zotero_username: # your zotero username
 wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 
-contact_note: >
-  I'm best reached through email.
+contact_note: content.contact_note
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -184,6 +183,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-toc
   - jemoji
+  - jekyll-multiple-languages-plugin
 
 # Sitemap settings
 defaults:
@@ -194,6 +194,14 @@ defaults:
 
 sass:
   style: compressed
+
+
+# -----------------------------------------------------------------------------
+# Multi language settings
+# -----------------------------------------------------------------------------
+languages: ["en", "de"]
+default_locale_in_subfolder: false
+
 
 # -----------------------------------------------------------------------------
 # Jekyll Minifier
@@ -259,7 +267,7 @@ enable_publication_badges:
   dimensions: true # Dimensions badge (https://badge.dimensions.ai/)
 
 # Filter out certain bibtex entry keywords used internally from the bib output
-filtered_bibtex_keywords: [abbr, abstract, arxiv, bibtex_show, html, pdf, selected, supp, blog, code, poster, slides, website, preview, altmetric, video]
+filtered_bibtex_keywords: [abbr, abstract, abstractde, arxiv, bibtex_show, html, pdf, selected, supp, blog, code, poster, slides, website, preview, altmetric, video]
 
 # Maximum number of authors to be shown for each publication (more authors are visible on click)
 max_author_limit: 6 # leave blank to always show all authors

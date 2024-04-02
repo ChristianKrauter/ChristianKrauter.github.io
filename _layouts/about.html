@@ -8,7 +8,7 @@ layout: default
           <h1 class="post-title">
             {% if site.title == "blank" -%}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}{%- else -%}{{ site.title }}{%- endif %}
           </h1>
-          <p class="desc">{{ page.subtitle }}</p>
+          <p class="desc">{%t page.subtitle %}</p>
         </header>
 
         <article>
@@ -30,8 +30,8 @@ layout: default
               cache_bust=true -%}
             {% endif -%}
             {%- if page.profile.more_info %}
-            <div class="more-info">
-              {{ page.profile.more_info }}
+            <div class="more-info" style="display: flex; flex-direction: column;">
+              {% t page.profile.more_info %}
             </div>
             {%- endif %}
           </div>
@@ -67,7 +67,7 @@ layout: default
               </div>
 
               <div class="contact-note">
-                {{ site.contact_note }}
+                {%t site.contact_note %}
               </div>
 
             </div>

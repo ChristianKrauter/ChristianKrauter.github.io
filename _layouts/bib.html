@@ -232,7 +232,11 @@
           {% if entry.abstract -%}
           <!-- Hidden abstract block -->
           <div class="abstract hidden">
+            {% if site.lang == "en" %}
             <p>{{ entry.abstract }}</p>
+            {% elsif site.lang == "de" %}
+            <p>{{ entry.abstractde }}</p>
+            {% endif %}
           </div>
           {%- endif -%}
 

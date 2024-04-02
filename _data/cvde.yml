@@ -1,0 +1,61 @@
+- title: Allgemeines
+  type: map
+  contents:
+    - name: Name
+      value: Christian Krauter
+    - name: Sprachen
+      value: Deutsch, Englisch
+    - name: Interessen
+      value: Mensch-Computer-Interaktion, Augmented/Virtual Reality, Informationsvisualisierung, Motorräder, Pflanzen, Mechanische Tastaturen
+
+- title: Ausbildung
+  type: time_table
+  contents:
+    - title: Doktorand
+      institution: Universität Stuttgart
+      year: Okt 2023 - heute
+    - title: M.Sc. Informatik
+      institution: Universität Stuttgart
+      year: 2022
+      description:
+        - "Abschlussarbeit: Entwurf des nächsten intelligenten Stuhls auf der Grundlage einer Literaturübersicht über Haltungserkennung und Feedback (Designing the next smart chair based on a posture recognition and feedback literature review)"
+    - title: B.Sc. Medieninformatik
+      institution: Universität Stuttgart
+      year: 2019
+      description:
+        - "Abschlussarbeit: Erforschung der Notiﬁkationspräsentation in der virtuellen Realität (Exploring Notiﬁcation Presentation in Virtual Reality)"
+
+- title: Akademische Erfahrung
+  type: time_table
+  contents:
+    - title: Wissenschaftlicher Mitarbeiter
+      institution: Universität zu Köln
+      year: Feb 2023 - Aug 2023
+    - title: Mitarbeiter in Technik und Verwaltung
+      institution: Universität zu Köln
+      year: Okt 2022 - Feb 2023
+    - title: Wissenschaftliche Hilfskraft
+      institution: Universität zu Köln
+      year: Apr 2021 - Sep 2022
+    - title: Tutor für Mensch-Computer-Interaktion
+      institution: Universität Stuttgart
+      year: Apr 2018 – Sep 2018
+    - title: Studentische Hilfskraft bei der Konferenz "BTW"
+      institution: Universität Stuttgart
+      year: März 2017
+    - title: Tutor für Medieninformatik
+      institution: Universität Stuttgart
+      year: Okt 2016 – März 2017
+
+- title: Industrie-Erfahrung
+  type: time_table
+  contents:
+    - title: Werkstudent in der Softwareentwicklung
+      institution: Valeo Deutschland
+      year: Feb 2019 - Aug 2020
+    - title: Nebenjob in den Bereichen Lager und Versand
+      institution: Mindvent GmbH
+      year: Sep 2013 - März 2016
+    - title: Aushilfe in Fahrradmontur, Versand und Kundenberatung
+      institution: Fahrrad Imle
+      year: Mai 2011 - Mai 2013

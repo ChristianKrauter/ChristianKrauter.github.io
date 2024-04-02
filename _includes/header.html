@@ -46,7 +46,7 @@
 
               <!-- About -->
               <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-                <a class="nav-link" href="{{ '/' | relative_url }}">{{ about_title }}
+                <a class="nav-link" href="{{ '/' | prepend: site.baseurl}}">{% t about_title %}
                   {%- if page.permalink == '/' -%}
                   <span class="sr-only">(current)</span>
                   {%- endif -%}
@@ -55,7 +55,7 @@
               {% if site.blog_nav_title %}
               <!-- Blog -->
               <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
-                <a class="nav-link" href="{{ '/blog/' | relative_url }}">{{ site.blog_nav_title }}
+                <a class="nav-link" href="{{ '/blog/' | prepend: site.baseurl }}"{{ site.blog_nav_title }}
                   {%- if page.url contains 'blog' -%}
                   <span class="sr-only">(current)</span>
                   {%- endif -%}
@@ -69,7 +69,7 @@
               {%- if p.nav and p.autogen == nil -%}
               {%- if p.dropdown %}
               <li class="nav-item dropdown {% if page.title == p.title %}active{% endif %}">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ p.title }}
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{%t p.title %}
                   {%- if page.title == p.title -%}
                   <span class="sr-only">(current)</span>
                   {%- endif -%}
@@ -79,14 +79,14 @@
                   {%- if child.title == 'divider' %}
                   <div class="dropdown-divider"></div>
                   {%- else %}
-                  <a class="dropdown-item" href="{{ child.permalink | relative_url }}">{{ child.title }}</a>
+                  <a class="dropdown-item" href="{{ child.permalink | prepend: site.baseurl }}">{%t child.title %}</a>
                   {%- endif -%}
                   {% endfor %}
                 </div>
               </li>
               {%- else %}
               <li class="nav-item {% if page.title == p.title %}active{% endif %}">
-                <a class="nav-link" href="{{ p.url | relative_url }}">{{ p.title }}
+                <a class="nav-link" href="{{ p.url | prepend: site.baseurl }}">{%t p.title %}
                   {%- if page.title == p.title -%}
                   <span class="sr-only">(current)</span>
                   {%- endif -%}
@@ -96,6 +96,15 @@
               {%- endif -%}
               {% endfor -%}
               {%- if site.enable_darkmode %}
+
+              <!-- Toogle language -->
+              <li class="nav-item active">
+                {% if site.lang == "en" %}
+                <a class="nav-link" href="{{site.baseurl_root}}/de{{page.url}}"> DE </a>
+                {% elsif site.lang == "de" %}
+                <a class="nav-link" href="{{site.baseurl_root}}{{page.url}}"> EN </a>
+                {% endif %}
+              </li>
 
               <!-- Toogle theme mode -->
               <li class="toggle-container">
