@@ -44,6 +44,9 @@
       {% endif %}
 
       {%- for author in entry.author_array limit: author_array_limit -%}
+      {%- if author.last contains "*" -%}
+      {%- assign footnote = true -%}
+      {%- endif -%}
       {%- assign author_is_self = false -%}
       {%- assign author_last_name = author.last | remove: "¶" | remove: "&" | remove: "*" | remove: "†" | remove: "^"
       -%}
@@ -105,6 +108,12 @@
               ">{{more_authors_hide}}</span>
       {%- endif -%}
 
+      <!-- Equal controbution -->
+      {%- if footnote == true -%}
+      <br/> * contributed equally
+      {%- assign footnote = false -%}
+      {%- endif -%}
+
     </div>
 
     <!-- Journal/Book title and date -->
@@ -160,6 +169,9 @@
         role="button">PDF</a>
       {%- endif %}
       {%- endif %}
+      {%- if entry.video %}
+      <a href="{{ entry.video }}" class="btn btn-sm z-depth-0" role="button">Video</a>
+      {%- endif %}
       {%- if entry.supp %}
       {% if entry.supp contains '://' -%}
       <a href="{{ entry.supp }}" class="btn btn-sm z-depth-0" role="button">Supp</a>
@@ -193,8 +205,8 @@
       {%- if entry.website %}
       <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
       {%- endif %}
-      {%- if entry.video %}
-      <a href="{{ entry.video }}" class="btn btn-sm z-depth-0" role="button">Video</a>
+      {%- if entry.video_presentation %}
+      <a href="{{ entry.video_presentation }}" class="btn btn-sm z-depth-0" role="button">Pres</a>
       {%- endif %}
     </div>
     {% if site.enable_publication_badges %}
