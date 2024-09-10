@@ -1,0 +1,54 @@
+<!--
+<style>
+    .image-gallery {overflow: auto; margin-left: -1%!important;}
+    .image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 49%;}
+    .image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+    .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+    .image-gallery li a img {width: 100%; display: block;}
+</style>
+-->
+
+<style>
+   /*! div style */
+  .image-gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+    justify-content: center;
+    padding: 4px;
+  }
+
+  .box {
+      flex-basis: 25%;
+      width: 100%;
+      padding: 10px;
+      margin: 2px;
+  }
+
+  .img-gallery {
+    width: 100%;
+  height: 200px;
+    object-fit: cover;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+</style>
+
+<div class="image-gallery">
+{% for file in site.static_files %}
+    {% if file.path contains include.folder %}
+        {% if file.extname == '.webp' or file.extname == '.webp' or file.extname == '.webp' or file.extname == '.webp' %}
+            {% assign filenameparts = file.path | split: "/" %}
+            {% assign filelink = file.path | replace: '-480', '' | replace: file.extname,'.jpg'%}
+            {% assign filename = filenameparts | last | replace: file.extname,"" | replace: -800,""%}
+            <div class="box">
+                <a href="{{ filelink | relative_url }}" title="{{ filename }}">
+                    <img src="{{ file.path | relative_url }}" alt="{{ filename }}" class="img-gallery"/>
+                </a>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endfor %}
+</div>
