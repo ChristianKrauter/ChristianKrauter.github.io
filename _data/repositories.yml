@@ -1,5 +1,11 @@
+github_users:
+  - ChristianKrauter
+
+repo_description_lines_max: 2
+
 github_repos:
   - ChristianKrauter/sitting-posture-review-material
   - ChristianKrauter/ChristianKrauter.github.io
   - ChristianKrauter/FaPra_osm_2020
   - ChristianKrauter/AR_VR_Project_CHI_submission
+  - visvar/visvar.github.io
