@@ -47,6 +47,19 @@
       institution: Universität Stuttgart
       year: Okt 2016 – März 2017
 
+- title: Ehrenamtliche Tätigkeiten
+  type: nested_list
+  contents:
+    - title: Studentischer Freiwilliger
+      items:
+        - "Mensch und Computer (MuC): 2023, 2024"
+
+- title: Auszeichnungen
+  type: nested_list
+  contents:
+    - title: MuC 2024
+      items: SF Führungslegende, SF Meiste Nominierungen für Auszeichnungen
+
 - title: Industrie-Erfahrung
   type: time_table
   contents:

@@ -11,7 +11,7 @@
 - title: Education
   type: time_table
   contents:
-    - title: PhD Candidate
+    - title: Ph.D. Candidate in Computer Science
       institution: University of Stuttgart
       year: Oct 2023 - now
     - title: M.Sc. Computer Science
@@ -46,6 +46,19 @@
     - title: Tutor for mediainformatics
       institution: University of Stuttgart
       year: Oct 2016 – Mar 2017
+
+- title: Volunteering
+  type: nested_list
+  contents:
+    - title: Student Volunteer
+      items:
+        - "Mensch und Computer (MuC): 2023, 2024"
+
+- title: Awards
+  type: nested_list
+  contents:
+    - title: MuC 2024
+      items: SV Leadership Legend, SV Most Nominations for Awards
 
 - title: Industry experience
   type: time_table
