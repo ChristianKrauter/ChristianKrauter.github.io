@@ -1,4 +1,4 @@
-- title: Basics
+- title : Basics
   type: map
   contents:
     - name: Name
@@ -13,7 +13,7 @@
   contents:
     - title: Ph.D. Candidate in Computer Science
       institution: University of Stuttgart
-      year: Oct 2023 - now
+      year: Oct 2023 - Present
     - title: M.Sc. Computer Science
       institution: University of Stuttgart
       year: 2022
@@ -25,9 +25,37 @@
       description:
         - "Thesis: Exploring Notiﬁcation Presentation in Virtual Reality"
 
-- title: Academic experience
+- title: Awards
+  type: list
+  contents:
+    - <u>SFB-TRR 161 Hackathon 2025:</u> Out-of-the-box Design Award
+    - <u>MuC 2024:</u> SV Leadership Legend, SV Most Nominations for Awards
+
+- title: Volunteering
+  type: nested_list
+  contents:
+    - title: Student Volunteer
+      items:
+        - "Mensch und Computer (MuC): 2023, 2024 (day captain)"
+
+- title: Supervised theses
+  type: nested_list
+  contents:
+    - title: Master theses
+      items:
+        - "2024 Alaa Elghazaly, Making Female Researchers More Visible to the General Public Through Augmented Reality"
+        - "2024 Tim Halach, AR Driving Assistant for Wheelchairs"
+    - title: Bachelor theses
+      items:
+        - "2024 Simon Mittelhammer, Augmented Reality in Motion: Enhancement of Auditory Media"
+        - "2024 Ursula Krause, VisJacket: A Framework for Wearable Visualizations"
+
+- title: Employment
   type: time_table
   contents:
+    - title: HCI Researcher Assistant (Ph.D. Student)
+      institution: University of Stuttgart
+      year: Oct 2023 - Present
     - title: Research Assistant
       institution: University of Cologne
       year: Feb 2023 - Aug 2023
@@ -37,38 +65,22 @@
     - title: Student research assistant
       institution: University of Cologne
       year: Apr 2021 - Sep 2022
+    - title: Working student in software development
+      institution: Valeo Germany
+      year: Feb 2019 - Aug 2020
     - title: Tutor for human-computer interaction
       institution: University of Stuttgart
       year: Apr 2018 – Sep 2018
     - title: Student assistant at the "BTW" conference
       institution: University of Stuttgart
       year: Mar 2017
-    - title: Tutor for mediainformatics
+    - title: Tutor for media informatics
       institution: University of Stuttgart
       year: Oct 2016 – Mar 2017
-
-- title: Volunteering
-  type: nested_list
-  contents:
-    - title: Student Volunteer
-      items:
-        - "Mensch und Computer (MuC): 2023, 2024"
-
-- title: Awards
-  type: nested_list
-  contents:
-    - title: MuC 2024
-      items: SV Leadership Legend, SV Most Nominations for Awards
-
-- title: Industry experience
-  type: time_table
-  contents:
-    - title: Working student in software development
-      institution: Valeo Germany
-      year: Feb 2019 - Aug 2020
     - title: Part-time job in warehouse and shipping
       institution: Mindvent GmbH
       year: Sep 2013 - Mar 2016
     - title: Part-time job in bicycle assembly and customer service
       institution: Fahrrad Imle
       year: May 2011 - May 2013
+      
