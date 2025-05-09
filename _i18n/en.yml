@@ -11,11 +11,12 @@ titles:
   unk: page not found
   photos: photos
 content:
-  about_subtitle: Ph.D. Candidate in HCI, AR, VR, and InfoVis
+  about_subtitle: Ph.D. Candidate in HCI, AR, VR, and InfoVis.
   about_info: >
-    <p>Member of
-    <a href="https://visvar.github.io/" target="_blank">VISVAR</a>,
-    <a href="https://www.visus.uni-stuttgart.de/" target="_blank">VISUS</a>,
-    <a href="https://imprs.is.mpg.de/" target="_blank">IMPRS-IS</a>,
-    University of Stuttgart</p>
+    <p>Member of the
+    <a href="https://visvar.github.io/" target="_blank">HCI</a>
+    group of
+    <a href="https://www.visus.uni-stuttgart.de/" target="_blank">VISUS</a>
+    at the University of Stuttgart and
+    <a href="https://imprs.is.mpg.de/" target="_blank">IMPRS-IS</a>.</p>
   contact_note: I am best reached through email.
