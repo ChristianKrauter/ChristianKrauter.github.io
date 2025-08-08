@@ -18,7 +18,7 @@
       institution: University of Stuttgart
       year: 2022
       description:
-        - "Thesis: Designing the next smart chair based on a posture recognition and feedback literature review"
+        - "Thesis: Designing the Next Smart Chair Based on a Posture Recognition and Feedback Literature Review"
     - title: B.Sc. Mediainformatics
       institution: University of Stuttgart
       year: 2019
@@ -37,6 +37,7 @@
     - title: Student Volunteer
       items:
         - "Mensch und Computer (MuC): 2023, 2024 (day captain)"
+        - "CHI: 2026 (assistant to the visualization subcommittee chairs)"
 
 - title: Supervised theses
   type: nested_list
@@ -47,6 +48,7 @@
         - "2024 Tim Halach, AR Driving Assistant for Wheelchairs"
     - title: Bachelor theses
       items:
+        - "2025 Silas Kuhn, Development and Analysis of a Taxonomy for Augmented Reality in Safety Critical Environments"
         - "2024 Simon Mittelhammer, Augmented Reality in Motion: Enhancement of Auditory Media"
         - "2024 Ursula Krause, VisJacket: A Framework for Wearable Visualizations"
 

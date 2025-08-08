@@ -36,7 +36,8 @@
   contents:
     - title: Studentischer Freiwilliger
       items:
-        - "Mensch und Computer (MuC): 2023, 2024 (day captain)"
+        - "Mensch und Computer (MuC): 2023, 2024 (Tageskapitän)"
+        - "CHI: 2026 (Assistent der Leiter des Unterkomitees für Visualisierung)"
 
 - title: Betreute Abschlussarbeiten
   type: nested_list
@@ -47,6 +48,7 @@
         - "2024 Tim Halach, AR-Fahrassistent für Rollstühle"
     - title: Bachelor-Arbeiten
       items:
+        - "2025 Silas Kuhn, Entwicklung und Analyse einer Taxonomie für Augmented Reality in sicherheitskritischen Umgebungen"
         - "2024 Simon Mittelhammer, Augmented Reality in Bewegung: Aufwertung von auditiven Medien"
         - "2024 Ursula Krause, VisJacke: ein Framework für tragbare Visualisierungen"
 
