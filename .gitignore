@@ -10,3 +10,4 @@ Gemfile.lock
 vendor
 *Zone.Identifier
 .vscode
+assets/css/bw.*
