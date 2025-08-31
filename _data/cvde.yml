@@ -36,8 +36,9 @@
   contents:
     - title: Studentischer Freiwilliger
       items:
-        - "Mensch und Computer (MuC): 2023, 2024 (Tageskapitän)"
         - "CHI: 2026 (Assistent der Leiter des Unterkomitees für Visualisierung)"
+        - "Mensch und Computer (MuC): 2023, 2024 (Tageskapitän), 2025 (Tageskapitän)"
+        - "UIST: 2025"
 
 - title: Betreute Abschlussarbeiten
   type: nested_list

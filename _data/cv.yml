@@ -36,8 +36,9 @@
   contents:
     - title: Student Volunteer
       items:
-        - "Mensch und Computer (MuC): 2023, 2024 (day captain)"
         - "CHI: 2026 (assistant to the visualization subcommittee chairs)"
+        - "Mensch und Computer (MuC): 2023, 2024 (day captain), 2025 (day captain)"
+        - "UIST: 2025"
 
 - title: Supervised theses
   type: nested_list
