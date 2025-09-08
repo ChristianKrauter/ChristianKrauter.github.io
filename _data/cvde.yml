@@ -26,19 +26,26 @@
         - "Abschlussarbeit: Erforschung der Notiﬁkationspräsentation in der virtuellen Realität"
 
 - title: Auszeichnungen
-  type: list
+  type: map
   contents:
-    - <u>SFB-TRR 161 Hackathon 2025:</u> Out-of-the-Box-Design-Auszeichnung
-    - <u>MuC 2024:</u> SF Führungslegende, SF Meiste Nominierungen für Auszeichnungen
+    - name: MuC 2025
+      value: "'Life Time Tageskapitän' (Studentischer Freiwilliger)"
+    - name: SFB-TRR 161 Hackathon 2025
+      value: "'Out-of-the-box Design'"
+    - name: MuC 2024
+      value: "'Führungslegende'; 'Meiste Nominierungen für Auszeichnungen' (Studentischer Freiwilliger)"
 
-- title: Freiwilliges Engagement
-  type: nested_list
+- title: Volunteering
+  type: map
   contents:
-    - title: Studentischer Freiwilliger
-      items:
-        - "CHI: 2026 (Assistent der Leiter des Unterkomitees für Visualisierung)"
-        - "Mensch und Computer (MuC): 2023, 2024 (Tageskapitän), 2025 (Tageskapitän)"
-        - "UIST: 2025"
+    - name: 2026
+      value: CHI (Assistent der Leitung des Unterkomitees für Visualisierung)
+    - name: 2025
+      value: MuC (Studentischer Freiwilliger, Tageskapitän), UIST (Studentischer Freiwilliger)
+    - name: 2024
+      value: MuC (Studentischer Freiwilliger, Tageskapitän)
+    - name: 2023
+      value: MuC (Studentischer Freiwilliger)
 
 - title: Betreute Abschlussarbeiten
   type: nested_list
@@ -70,7 +77,7 @@
       year: Apr 2021 - Sep 2022
     - title: Werkstudent in der Softwareentwicklung
       institution: Valeo Deutschland
-      year: Feb 2019 - Aug 2020 
+      year: Feb 2019 - Aug 2020
     - title: Tutor für Mensch-Computer-Interaktion
       institution: Universität Stuttgart
       year: Apr 2018 – Sep 2018

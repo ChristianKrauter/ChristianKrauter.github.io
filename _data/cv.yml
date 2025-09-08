@@ -26,19 +26,26 @@
         - "Thesis: Exploring Notiﬁcation Presentation in Virtual Reality"
 
 - title: Awards
-  type: list
+  type: map
   contents:
-    - <u>SFB-TRR 161 Hackathon 2025:</u> Out-of-the-box Design Award
-    - <u>MuC 2024:</u> SV Leadership Legend, SV Most Nominations for Awards
+    - name: MuC 2025
+      value: "'Life Time Day Captain' (student volunteer)"
+    - name: SFB-TRR 161 Hackathon 2025
+      value: "'Out-of-the-box Design'"
+    - name: MuC 2024
+      value: "'Leadership Legend'; 'Most Nominations for Awards' (student volunteer)"
 
 - title: Volunteering
-  type: nested_list
+  type: map
   contents:
-    - title: Student Volunteer
-      items:
-        - "CHI: 2026 (assistant to the visualization subcommittee chairs)"
-        - "Mensch und Computer (MuC): 2023, 2024 (day captain), 2025 (day captain)"
-        - "UIST: 2025"
+    - name: 2026
+      value: CHI (assistant to the visualization subcommittee chairs)
+    - name: 2025
+      value: MuC (student volunteer, day captain), UIST (student volunteer)
+    - name: 2024
+      value: MuC (student volunteer, day captain)
+    - name: 2023
+      value: MuC (student volunteer)
 
 - title: Supervised theses
   type: nested_list
