@@ -110,7 +110,11 @@
 
       <!-- Equal controbution -->
       {%- if footnote == true -%}
-      <br/> * contributed equally
+        {% if site.lang == "en" %}
+        <br/> * contributed equally
+        {% elsif site.lang == "de" %}
+        <br/> * gleichwertiger Beitrag
+        {% endif %}
       {%- assign footnote = false -%}
       {%- endif -%}
 
