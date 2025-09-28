@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.chriskrauter.de//sitemap.xml
+Sitemap: www.chriskrauter.de/sitemap.xml
