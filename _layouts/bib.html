@@ -178,23 +178,23 @@
       {%- endif %}
       {%- if entry.supp %}
       {% if entry.supp contains '://' -%}
-      <a href="{{ entry.supp }}" target="_blank" class="btn btn-sm z-depth-0" role="button">Supp</a>
+      <a href="{{ entry.supp }}" target="_blank" target="_blank" class="btn btn-sm z-depth-0" role="button">Supp</a>
       {%- else -%}
       <a href="{{ entry.supp | prepend: '/assets/pdf/' | relative_url }}" target="_blank" class="btn btn-sm z-depth-0"
         role="button">Supp</a>
       {%- endif %}
       {%- endif %}
       {%- if entry.blog %}
-      <a href="{{ entry.blog }}" class="btn btn-sm z-depth-0" role="button">Blog</a>
+      <a href="{{ entry.blog }}" target="_blank" class="btn btn-sm z-depth-0" role="button">Blog</a>
       {%- endif %}
       {%- if entry.code %}
-      <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button">Code</a>
+      <a href="{{ entry.code }}" target="_blank" class="btn btn-sm z-depth-0" role="button">Code</a>
       {%- endif %}
       {%- if entry.poster %}
       {% if entry.poster contains '://' -%}
-      <a href="{{ entry.poster }}" class="btn btn-sm z-depth-0" role="button">Poster</a>
+      <a href="{{ entry.poster }}" target="_blank" class="btn btn-sm z-depth-0" role="button">Poster</a>
       {%- else -%}
-      <a href="{{ entry.poster | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0"
+      <a href="{{ entry.poster | prepend: '/assets/pdf/' | relative_url }}" target="_blank" class="btn btn-sm z-depth-0"
         role="button">Poster</a>
       {%- endif %}
       {%- endif %}
