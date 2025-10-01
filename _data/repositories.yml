@@ -4,6 +4,7 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
+  - ChristianKrauter/VisRing
   - ChristianKrauter/sitting-posture-review-material
   - ChristianKrauter/ChristianKrauter.github.io
   - ChristianKrauter/FaPra_osm_2020
