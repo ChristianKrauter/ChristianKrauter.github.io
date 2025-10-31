@@ -50,12 +50,14 @@
 - title: Betreute Abschlussarbeiten
   type: nested_list
   contents:
-    - title: Master-Arbeiten
+    - title: Masterarbeiten
       items:
         - "2024 Alaa Elghazaly, Forscherinnen durch Augmented Reality für die Öffentlichkeit sichtbarer machen"
         - "2024 Tim Halach, AR-Fahrassistent für Rollstühle"
-    - title: Bachelor-Arbeiten
+    - title: Bachelorarbeiten
       items:
+        - "2025 Mara Schulte, Visualisierung von Herzfrequenzdaten für OLED-Smartringe"
+        - "2025 Kateryna Ganina, Neugestaltung von Fortschrittsdiagrammen für Smartwatch-Komplikationen"
         - "2025 Silas Kuhn, Entwicklung und Analyse einer Taxonomie für Augmented Reality in sicherheitskritischen Umgebungen"
         - "2024 Simon Mittelhammer, Augmented Reality in Bewegung: Aufwertung von auditiven Medien"
         - "2024 Ursula Krause, VisJacke: ein Framework für tragbare Visualisierungen"
@@ -80,13 +82,13 @@
       year: Feb 2019 - Aug 2020
     - title: Tutor für Mensch-Computer-Interaktion
       institution: Universität Stuttgart
-      year: Apr 2018 – Sep 2018
+      year: Apr 2018 - Sep 2018
     - title: Studentische Hilfskraft bei der Konferenz "BTW"
       institution: Universität Stuttgart
       year: März 2017
     - title: Tutor für Medieninformatik
       institution: Universität Stuttgart
-      year: Okt 2016 – März 2017
+      year: Okt 2016 - März 2017
     - title: Nebenjob in den Bereichen Lager und Versand
       institution: Mindvent GmbH
       year: Sep 2013 - März 2016
