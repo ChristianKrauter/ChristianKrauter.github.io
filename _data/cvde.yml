@@ -47,7 +47,7 @@
     - name: 2023
       value: MuC (Studentischer Freiwilliger)
 
-- title: Betreute Abschlussarbeiten
+- title: Supervision
   type: nested_list
   contents:
     - title: Masterarbeiten
