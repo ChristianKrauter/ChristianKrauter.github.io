@@ -35,7 +35,7 @@
     - name: MuC 2024
       value: "'Führungslegende'; 'Meiste Nominierungen für Auszeichnungen' (Studentischer Freiwilliger)"
 
-- title: Volunteering
+- title: Freiwilligenarbeit
   type: map
   contents:
     - name: 2026
@@ -47,7 +47,7 @@
     - name: 2023
       value: MuC (Studentischer Freiwilliger)
 
-- title: Supervision
+- title: Studierendenbetreuung
   type: nested_list
   contents:
     - title: Masterarbeiten
@@ -61,6 +61,16 @@
         - "2025 Silas Kuhn, Entwicklung und Analyse einer Taxonomie für Augmented Reality in sicherheitskritischen Umgebungen"
         - "2024 Simon Mittelhammer, Augmented Reality in Bewegung: Aufwertung von auditiven Medien"
         - "2024 Ursula Krause, VisJacke: ein Framework für tragbare Visualisierungen"
+
+- title: Lehrunterstützung
+  type: map
+  contents:
+    - name: Informationsvisualisierung und visuelle Analytik
+      value: Sommer 2024; Winter 2024/25, 2025/26
+    - name: Bachelor Seminar
+      value: Sommer 2024, 2025
+    - name: Master Seminar
+      value: Sommer 2026
 
 - title: Beschäftigung
   type: time_table

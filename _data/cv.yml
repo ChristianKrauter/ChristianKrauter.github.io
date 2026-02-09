@@ -47,7 +47,7 @@
     - name: 2023
       value: MuC (student volunteer)
 
-- title: Supervision
+- title: Student Supervision
   type: nested_list
   contents:
     - title: Master theses
@@ -61,6 +61,16 @@
         - "2025 Silas Kuhn, Development and Analysis of a Taxonomy for Augmented Reality in Safety Critical Environments"
         - "2024 Simon Mittelhammer, Augmented Reality in Motion: Enhancement of Auditory Media"
         - "2024 Ursula Krause, VisJacket: A Framework for Wearable Visualizations"
+
+- title: Teaching Support
+  type: map
+  contents:
+    - name: Information Visualization and Visual Analytics 
+      value: Summer 2024; Winter 2024/25, 2025/26
+    - name: Bachelor Seminar
+      value: Summer 2024, 2025
+    - name: Master Seminar
+      value: Summer 2026
 
 - title: Employment
   type: time_table
