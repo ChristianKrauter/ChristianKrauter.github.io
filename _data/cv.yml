@@ -56,11 +56,19 @@
         - "2024 Tim Halach, AR Driving Assistant for Wheelchairs"
     - title: Bachelor theses
       items:
+        - "2026 Rang Omar, Evaluating New Designs of Progress Charts on a Smartwatch"
         - "2025 Mara Schulte, Visualization of Heart-Rate Data for OLED Smart Rings"
         - "2025 Kateryna Ganina, Redesigning Progress Charts of Smartwatch Complications"
         - "2025 Silas Kuhn, Development and Analysis of a Taxonomy for Augmented Reality in Safety Critical Environments"
         - "2024 Simon Mittelhammer, Augmented Reality in Motion: Enhancement of Auditory Media"
         - "2024 Ursula Krause, VisJacket: A Framework for Wearable Visualizations"
+    - title: Master research projects
+      items:
+        - "2026 Pantelis Antoniadis, Perception of Stimuli on Convex Surfaces for Smartrings in Virtual Reality"
+        - "2026 Vignesh Nagarajan Naidu, Designing Micro Visualizations on a Curved E-Ink Display"
+    - title: Student assistants
+      items:
+        - "Mara Schulte, Tara Kamath"
 
 - title: Teaching Support
   type: map

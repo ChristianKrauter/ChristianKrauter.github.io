@@ -56,11 +56,18 @@
         - "2024 Tim Halach, AR-Fahrassistent für Rollstühle"
     - title: Bachelorarbeiten
       items:
+        - "2025 Rang Omar, Evaluierung neuer Designs für Fortschrittsdiagramme auf einer Smartwatch"
         - "2025 Mara Schulte, Visualisierung von Herzfrequenzdaten für OLED-Smartringe"
         - "2025 Kateryna Ganina, Neugestaltung von Fortschrittsdiagrammen für Smartwatch-Komplikationen"
         - "2025 Silas Kuhn, Entwicklung und Analyse einer Taxonomie für Augmented Reality in sicherheitskritischen Umgebungen"
         - "2024 Simon Mittelhammer, Augmented Reality in Bewegung: Aufwertung von auditiven Medien"
         - "2024 Ursula Krause, VisJacke: ein Framework für tragbare Visualisierungen"
+    - title: Master-Forschungsprojekte
+      items:
+        - "2026 Pantelis Antoniadis, Wahrnehmung von Reizen auf konvexen Oberflächen für Smartrings in Virtual Reality"
+        - "2026 Vignesh Nagarajan Naidu, Entwurf von Mikrovisualisierungen auf einem gekrümmten E-Ink-Display"
+    - title: Studentische Hilfskräfte
+        - "Mara Schulte, Tara Kamath"
 
 - title: Lehrunterstützung
   type: map
