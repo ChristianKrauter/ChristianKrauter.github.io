@@ -775,7 +775,7 @@ function headerAndNav(path = '.', pageType) {
       ${pageType === 'home' ? '' : `<div class="siteName">Chris Krauter</div>`}
       <nav>
         <ul>
-          <li><a href="${path}/index.html"${currentAttr('home')}>about</a></li>
+          <li><a href="${path}/"${currentAttr('home')}>about</a></li>
           <li><a href="${pageHref('publications')}"${currentAttr('publications')}>publications</a></li>
           <li><a href="${pageHref('cv')}"${currentAttr('cv')}>cv</a></li>
           <li><a href="${pageHref('repositories')}"${currentAttr('repositories')}>repositories</a></li>
