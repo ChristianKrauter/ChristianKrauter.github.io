@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      (function () {
+        var stored = localStorage.getItem('theme')
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        document.documentElement.setAttribute('data-theme', theme)
+      })()
+    </script>
+
+    <title>Chris Krauter</title>
+    
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="shortcut icon" href="./assets/img/misc/favicon.png">
+    <link rel="icon" type="image/png" href="./assets/img/misc/favicon.png" sizes="256x256">
+    <link rel="apple-touch-icon" sizes="256x256" href="./assets/img/misc/favicon.png">
+
+    <!-- OG Metadata -->
+    <meta property="og:site_name" content="Chris Krauter" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Chris Krauter" />
+    <meta property="og:url" content="https://chriskrauter.de/" />
+    <meta property="og:description" content="Personal website of Chris Krauter" />
+    <meta property="og:image" content="https://chriskrauter.de/assets/img/misc/link_preview.jpg" />
+    <meta property="og:locale" content="EN" />
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title"  content="Chris Krauter" />
+    <meta name="twitter:description" content="Personal website of Chris Krauter" />
+    <meta name="twitter:image" content="https://chriskrauter.de/assets/img/misc/ck.jpg" />
+  </head>
+  
+
+<body>
+  <main>
+    
+  <div>
+  <header>
+    <div class="headerInner">
+      
+      <nav>
+        <ul>
+          <li><a href="./index.html" aria-current="page">about</a></li>
+          <li><a href="./pages/publications.html">publications</a></li>
+          <li><a href="./pages/cv.html">cv</a></li>
+          <li><a href="./pages/repositories.html">repositories</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+</div>
+<script src="./assets/js/theme-toggle.js" defer></script>
+    <div class="pageContent">
+      <article>
+        
+<h1 id="about" class="title">Hi, I'm <span class="nameHeading">Chris Krauter</span></h1>
+
+<div class="avatarAndBio">
+  <img class="avatar" src="./assets/img/misc/ck.jpg" alt="Christian Krauter" />
+  <div class="bio">
+    <p class="subtitle">I am a Ph.D. Candidate in Human-Computer Interaction (Computer Science) in the <a href="https://visvar.github.io/" target="_blank" rel="external nofollow noopener">HCI</a> group of <a href="https://www.visus.uni-stuttgart.de/" target="_blank" rel="external nofollow noopener">VISUS</a> at the University of Stuttgart, and a member of <a href="https://imprs.is.mpg.de/" target="_blank" rel="external nofollow noopener">IMPRS-IS</a>, and <a href="https://www.simtech.uni-stuttgart.de/" target="_blank" rel="external nofollow noopener">SimTech</a>.</p>
+
+    <p style="text-align: justify;">My research interest lies in Human-Computer Interaction (HCI) with a focus on mobile devices of the future. I am further interested in information visualization and Augmented and Virtual Reality (AR/VR).</p>
+    <p style="text-align: justify;">I completed my Bachelor’s degree in media informatics, followed by a Master’s degree in computer science, both at the University of Stuttgart. My previous work covered notification placement in VR (bachelor thesis), an immersive social distancing VR demo, and a smart chair for sitting posture recognition and feedback (master thesis).</p>
+    <p style="text-align: justify;">Please contact me if you are interested in thesis writing or collaboration opportunities or have any questions about my research. I look forward to hearing from you.</p>
+  </div>
+</div>
+
+<div class="social-links">
+  <a href="mailto:%63%68%72%69%73%74%69%61%6E.%6B%72%61%75%74%65%72@%76%69%73%75%73.%75%6E%69-%73%74%75%74%74%67%61%72%74.%64%65" class="icon-link" title="Email" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://orcid.org/0000-0002-9787-0816" target="_blank" class="icon-link" title="ORCID" aria-label="ORCID">
+    <i class="ai ai-orcid"></i>
+  </a>
+  <a href="https://scholar.google.com/citations?user=sNDlSbkAAAAJ" target="_blank" class="icon-link" title="Google Scholar" aria-label="Google Scholar">
+    <i class="ai ai-google-scholar"></i>
+  </a>
+  <a href="https://www.researchgate.net/profile/Christian-Krauter-2/" target="_blank" class="icon-link" title="ResearchGate" aria-label="ResearchGate">
+    <i class="ai ai-researchgate"></i>
+  </a>
+  <a href="https://github.com/ChristianKrauter" target="_blank" class="icon-link" title="GitHub" aria-label="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/christian-krauter-4b8640218" target="_blank" class="icon-link" title="LinkedIn" aria-label="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://dblp.org/pid/251/1708.html" target="_blank" class="icon-link" title="DBLP" aria-label="DBLP">
+    <i class="ai ai-dblp"></i>
+  </a>
+</div>
+      </article>
+      
+<footer class="siteFooter" style="text-align: center">
+  © 2026 Chris Krauter. Hosted by GitHub Pages. Analytics by GoatCounter. Last updated: July 23, 2026.
+</footer>
+    </div>
+  </main>
+</body>
+
+</html>

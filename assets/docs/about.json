@@ -1,0 +1,19 @@
+{
+  "name": "Christian Krauter",
+  "heading": "Hi, I'm <span class=\"nameHeading\">Chris Krauter</span>",
+  "intro": "I am a Ph.D. Candidate in Human-Computer Interaction (Computer Science) in the <a href=\"https://visvar.github.io/\" target=\"_blank\" rel=\"external nofollow noopener\">HCI</a> group of <a href=\"https://www.visus.uni-stuttgart.de/\" target=\"_blank\" rel=\"external nofollow noopener\">VISUS</a> at the University of Stuttgart, and a member of <a href=\"https://imprs.is.mpg.de/\" target=\"_blank\" rel=\"external nofollow noopener\">IMPRS-IS</a>, and <a href=\"https://www.simtech.uni-stuttgart.de/\" target=\"_blank\" rel=\"external nofollow noopener\">SimTech</a>.",
+  "paragraphs": [
+    "My research interest lies in Human-Computer Interaction (HCI) with a focus on mobile devices of the future. I am further interested in information visualization and Augmented and Virtual Reality (AR/VR).",
+    "I completed my Bachelor’s degree in media informatics, followed by a Master’s degree in computer science, both at the University of Stuttgart. My previous work covered notification placement in VR (bachelor thesis), an immersive social distancing VR demo, and a smart chair for sitting posture recognition and feedback (master thesis).",
+    "Please contact me if you are interested in thesis writing or collaboration opportunities or have any questions about my research. I look forward to hearing from you."
+  ],
+  "email": "christian.krauter@visus.uni-stuttgart.de",
+  "contact": [
+    { "network": "ORCID", "url": "https://orcid.org/0000-0002-9787-0816" },
+    { "network": "Google Scholar", "url": "https://scholar.google.com/citations?user=sNDlSbkAAAAJ" },
+    { "network": "ResearchGate", "url": "https://www.researchgate.net/profile/Christian-Krauter-2/" },
+    { "network": "GitHub", "url": "https://github.com/ChristianKrauter" },
+    { "network": "LinkedIn", "url": "https://www.linkedin.com/in/christian-krauter-4b8640218" },
+    { "network": "DBLP", "url": "https://dblp.org/pid/251/1708.html" }
+  ]
+}

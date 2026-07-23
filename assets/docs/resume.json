@@ -1,0 +1,224 @@
+{
+  "basics": {
+    "name": "Christian Krauter",
+    "label": "Ph.D. Candidate in Human-Computer Interaction, University of Stuttgart",
+    "image": "https://chriskrauter.de/assets/img/misc/ck.jpg",
+    "email": "christian.krauter@visus.uni-stuttgart.de",
+    "url": "https://chriskrauter.de",
+    "summary": "Ph.D. Candidate in Human-Computer Interaction (Computer Science) at VISUS, University of Stuttgart, researching mobile devices of the future, information visualization, and Augmented/Virtual Reality.",
+    "location": {
+      "city": "Stuttgart",
+      "countryCode": "DE",
+      "region": "Baden-Württemberg"
+    },
+    "profiles": [
+      { "network": "ORCID", "username": "0000-0002-9787-0816", "url": "https://orcid.org/0000-0002-9787-0816" },
+      { "network": "Google Scholar", "username": "sNDlSbkAAAAJ", "url": "https://scholar.google.com/citations?user=sNDlSbkAAAAJ" },
+      { "network": "ResearchGate", "username": "Christian-Krauter-2", "url": "https://www.researchgate.net/profile/Christian-Krauter-2/" },
+      { "network": "GitHub", "username": "ChristianKrauter", "url": "https://github.com/ChristianKrauter" },
+      { "network": "LinkedIn", "username": "christian-krauter-4b8640218", "url": "https://www.linkedin.com/in/christian-krauter-4b8640218" },
+      { "network": "DBLP", "username": "251/1708", "url": "https://dblp.org/pid/251/1708.html" }
+    ]
+  },
+  "work": [
+    {
+      "name": "University of Stuttgart",
+      "position": "Research Assistant (Ph.D. Candidate)",
+      "startDate": "2023-10",
+      "highlights": [
+        "Teaching support: Information Visualization and Visual Analytics (Summer 2024; Winter 2024/25, 2025/26)",
+        "Teaching support: Bachelor Seminar (Summer 2024, 2025)",
+        "Teaching support: Master Seminar (Summer 2026)"
+      ]
+    },
+    {
+      "name": "University of Cologne",
+      "position": "Research Assistant",
+      "startDate": "2023-03",
+      "endDate": "2023-08"
+    },
+    {
+      "name": "University of Cologne",
+      "position": "Employee in Technology and Administration",
+      "startDate": "2022-10",
+      "endDate": "2023-02"
+    },
+    {
+      "name": "University of Cologne",
+      "position": "Student Research Assistant",
+      "startDate": "2021-04",
+      "endDate": "2022-09"
+    },
+    {
+      "name": "Valeo Germany",
+      "position": "Working Student in Software Development",
+      "startDate": "2019-02",
+      "endDate": "2020-08"
+    },
+    {
+      "name": "University of Stuttgart",
+      "position": "Tutor for Human-Computer Interaction",
+      "startDate": "2018-04",
+      "endDate": "2018-09"
+    },
+    {
+      "name": "University of Stuttgart",
+      "position": "Student Assistant at the \"BTW\" Conference",
+      "startDate": "2017-03",
+      "endDate": "2017-03"
+    },
+    {
+      "name": "University of Stuttgart",
+      "position": "Tutor for Media Informatics",
+      "startDate": "2016-10",
+      "endDate": "2017-03"
+    },
+    {
+      "name": "Mindvent GmbH",
+      "position": "Part-time Job in Warehouse and Shipping",
+      "startDate": "2013-09",
+      "endDate": "2016-03"
+    },
+    {
+      "name": "Fahrrad Imle",
+      "position": "Part-time Job in Bicycle Assembly and Customer Service",
+      "startDate": "2011-05",
+      "endDate": "2013-05"
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "CHI",
+      "position": "Assistant to the Visualization Subcommittee Chairs",
+      "startDate": "2026",
+      "endDate": "2026"
+    },
+    {
+      "organization": "MuC",
+      "position": "Student Volunteer Co-Chair",
+      "startDate": "2026",
+      "endDate": "2026"
+    },
+    {
+      "organization": "MuC",
+      "position": "Student Volunteer, Day Captain",
+      "startDate": "2025",
+      "endDate": "2025"
+    },
+    {
+      "organization": "UIST",
+      "position": "Student Volunteer",
+      "startDate": "2025",
+      "endDate": "2025"
+    },
+    {
+      "organization": "MuC",
+      "position": "Student Volunteer, Day Captain",
+      "startDate": "2024",
+      "endDate": "2024"
+    },
+    {
+      "organization": "MuC",
+      "position": "Student Volunteer",
+      "startDate": "2023",
+      "endDate": "2023"
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Stuttgart",
+      "area": "Computer Science",
+      "studyType": "Ph.D.",
+      "startDate": "2023-10"
+    },
+    {
+      "institution": "University of Stuttgart",
+      "area": "Computer Science",
+      "studyType": "M.Sc.",
+      "endDate": "2022",
+      "courses": [
+        "Thesis: Designing the Next Smart Chair Based on a Posture Recognition and Feedback Literature Review"
+      ]
+    },
+    {
+      "institution": "University of Stuttgart",
+      "area": "Media Informatics",
+      "studyType": "B.Sc.",
+      "endDate": "2019",
+      "courses": [
+        "Thesis: Exploring Notification Presentation in Virtual Reality"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "'Life Time Day Captain' (student volunteer)",
+      "date": "2025",
+      "awarder": "MuC"
+    },
+    {
+      "title": "'Out-of-the-box Design'",
+      "date": "2025",
+      "awarder": "SFB-TRR 161 Hackathon"
+    },
+    {
+      "title": "'Leadership Legend' (student volunteer)",
+      "date": "2024",
+      "awarder": "MuC"
+    },
+    {
+      "title": "'Most Nominations for Awards' (student volunteer)",
+      "date": "2024",
+      "awarder": "MuC"
+    }
+  ],
+  "languages": [
+    { "language": "German", "fluency": "Native speaker" },
+    { "language": "English", "fluency": "Fluent" }
+  ],
+  "interests": [
+    { "name": "Human-Computer Interaction" },
+    { "name": "Augmented/Virtual Reality" },
+    { "name": "Information Visualization" },
+    { "name": "Motorcycles" },
+    { "name": "Plants" },
+    { "name": "Mechanical Keyboards" }
+  ],
+  "projects": [
+    {
+      "name": "Master Thesis Supervision",
+      "highlights": [
+        "2024 Alaa Elghazaly, Making Female Researchers More Visible to the General Public Through Augmented Reality",
+        "2024 Tim Halach, AR Driving Assistant for Wheelchairs"
+      ]
+    },
+    {
+      "name": "Bachelor Thesis Supervision",
+      "highlights": [
+        "2026 Rang Omar, Evaluating New Designs of Progress Charts on a Smartwatch",
+        "2025 Mara Schulte, Visualization of Heart-Rate Data for OLED Smart Rings",
+        "2025 Kateryna Ganina, Redesigning Progress Charts of Smartwatch Complications",
+        "2025 Silas Kuhn, Development and Analysis of a Taxonomy for Augmented Reality in Safety Critical Environments",
+        "2024 Simon Mittelhammer, Augmented Reality in Motion: Enhancement of Auditory Media",
+        "2024 Ursula Krause, VisJacket: A Framework for Wearable Visualizations"
+      ]
+    },
+    {
+      "name": "Master Research Project Supervision",
+      "highlights": [
+        "2026 Pantelis Antoniadis, Perception of Stimuli on Convex Surfaces for Smartrings in Virtual Reality",
+        "2026 Vignesh Nagarajan Naidu, Designing Micro Visualizations on a Curved E-Ink Display"
+      ]
+    },
+    {
+      "name": "Student Assistant Supervision",
+      "highlights": [
+        "2024 – Present Mara Schulte",
+        "2026 – Present Tara Kamath"
+      ]
+    }
+  ],
+  "meta": {
+    "lastModified": "2026-07-22"
+  }
+}

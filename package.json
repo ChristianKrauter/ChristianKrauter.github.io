@@ -1,0 +1,26 @@
+{
+  "name": "ChristianKrauter.github.io",
+  "version": "2.0.0",
+  "description": "personal website",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "npm run resizeThumbs && node ./scripts/compile.js",
+    "resizeThumbs": "node ./scripts/image-resizer.js assets/img/teaser 256",
+    "ieeecopyright": "node ./scripts/add-copyright-ieee.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "upd": "npm-check-updates -u"
+  },
+  "author": "Christian Krauter",
+  "license": "",
+  "devDependencies": {
+    "bibtex-parse": "^2.1.0",
+    "bibtex-tidy": "^1.14.0",
+    "image-js": "^1.3.0",
+    "npm-check-updates": "^19.3.2",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^2.4.5",
+    "pdfjs-dist": "^5.5.207",
+    "qrcode": "^1.5.4"
+  }
+}

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      (function () {
+        var stored = localStorage.getItem('theme')
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        document.documentElement.setAttribute('data-theme', theme)
+      })()
+    </script>
+
+    <title>CV - Chris Krauter</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="shortcut icon" href="../assets/img/misc/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/img/misc/favicon.png" sizes="256x256">
+    <link rel="apple-touch-icon" sizes="256x256" href="../assets/img/misc/favicon.png">
+
+    <!-- OG Metadata -->
+    <meta property="og:site_name" content="Chris Krauter" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Chris Krauter" />
+    <meta property="og:url" content="https://chriskrauter.de/" />
+    <meta property="og:description" content="Personal website of Chris Krauter" />
+    <meta property="og:image" content="https://chriskrauter.de/assets/img/misc/link_preview.jpg" />
+    <meta property="og:locale" content="EN" />
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title"  content="Chris Krauter" />
+    <meta name="twitter:description" content="Personal website of Chris Krauter" />
+    <meta name="twitter:image" content="https://chriskrauter.de/assets/img/misc/ck.jpg" />
+  </head>
+  
+
+<body>
+  <main>
+    
+  <div>
+  <header>
+    <div class="headerInner">
+      <div class="siteName">Chris Krauter</div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">about</a></li>
+          <li><a href="./publications.html">publications</a></li>
+          <li><a href="./cv.html" aria-current="page">cv</a></li>
+          <li><a href="./repositories.html">repositories</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+</div>
+<script src="../assets/js/theme-toggle.js" defer></script>
+    <div class="pageContent">
+      <article class="cvSections">
+        <h1 class="title">CV</h1>
+
+        <div class="avatarAndBio cvAvatarBio">
+          <img class="avatar" src="../assets/img/misc/ck.jpg" alt="Christian Krauter" />
+          <div class="bio">
+            <div class="furtherInfo">
+              <div>
+                <h2>Name</h2>
+                <p>Christian Krauter</p>
+              </div>
+              <div>
+                <h2>Languages</h2>
+                <p>German (Native speaker), English (Fluent)</p>
+              </div>
+              <div>
+                <h2>Interests</h2>
+                <p>Human-Computer Interaction, Augmented/Virtual Reality, Information Visualization, Motorcycles, Plants, Mechanical Keyboards</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="yearHeading">Education</h2>
+        
+  <div class="cvTimeline">
+    
+    <div class="cvEntry">
+      <div class="cvDate">Oct 2023 &ndash; Present</div>
+      <div class="cvContent">
+        <h3>Ph.D. Computer Science</h3>
+        <div class="cvSubtitle">University of Stuttgart</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2022</div>
+      <div class="cvContent">
+        <h3>M.Sc. Computer Science</h3>
+        <div class="cvSubtitle">University of Stuttgart</div>
+        <ul><li>Thesis: Designing the Next Smart Chair Based on a Posture Recognition and Feedback Literature Review</li></ul>
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2019</div>
+      <div class="cvContent">
+        <h3>B.Sc. Media Informatics</h3>
+        <div class="cvSubtitle">University of Stuttgart</div>
+        <ul><li>Thesis: Exploring Notification Presentation in Virtual Reality</li></ul>
+      </div>
+    </div>
+  </div>
+
+        <h2 class="yearHeading">Awards</h2>
+        
+  <div class="cvTimeline cvTimelinePlainDate">
+    
+    <div class="cvEntry">
+      <div class="cvDate">2025</div>
+      <div class="cvContent">
+        <h3>'Life Time Day Captain' (student volunteer)</h3>
+        <div class="cvSubtitle">MuC</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2025</div>
+      <div class="cvContent">
+        <h3>'Out-of-the-box Design'</h3>
+        <div class="cvSubtitle">SFB-TRR 161 Hackathon</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2024</div>
+      <div class="cvContent">
+        <h3>'Leadership Legend' (student volunteer)</h3>
+        <div class="cvSubtitle">MuC</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2024</div>
+      <div class="cvContent">
+        <h3>'Most Nominations for Awards' (student volunteer)</h3>
+        <div class="cvSubtitle">MuC</div>
+        
+      </div>
+    </div>
+  </div>
+
+        <h2 class="yearHeading">Academic Volunteering</h2>
+        
+  <div class="cvTimeline cvTimelinePlainDate">
+    
+    <div class="cvEntry">
+      <div class="cvDate">2026</div>
+      <div class="cvContent">
+        <h3>Assistant to the Visualization Subcommittee Chairs</h3>
+        <div class="cvSubtitle">CHI</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2026</div>
+      <div class="cvContent">
+        <h3>SV <span class="cvGloss">(Student Volunteer)</span> Co-Chair</h3>
+        <div class="cvSubtitle">MuC</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2025</div>
+      <div class="cvContent">
+        <h3>SV, Day Captain</h3>
+        <div class="cvSubtitle">MuC</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2025</div>
+      <div class="cvContent">
+        <h3>SV</h3>
+        <div class="cvSubtitle">UIST</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2024</div>
+      <div class="cvContent">
+        <h3>SV, Day Captain</h3>
+        <div class="cvSubtitle">MuC</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2023</div>
+      <div class="cvContent">
+        <h3>SV</h3>
+        <div class="cvSubtitle">MuC</div>
+        
+      </div>
+    </div>
+  </div>
+
+        <h2 class="yearHeading">Student Supervision</h2>
+        
+  <div class="cvTimeline cvTimelinePlainDate">
+    
+    <div class="cvEntry">
+      <div class="cvDate">2026 – Present</div>
+      <div class="cvContent">
+        <h3>Tara Kamath <span class="cvGloss">(Student Assistant)</span></h3>
+        
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2024 – Present</div>
+      <div class="cvContent">
+        <h3>Mara Schulte <span class="cvGloss">(Student Assistant)</span></h3>
+        
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2026</div>
+      <div class="cvContent">
+        <h3>Rang Omar <span class="cvGloss">(Bachelor's Thesis)</span></h3>
+        <div class="cvSubtitle">Evaluating New Designs of Progress Charts on a Smartwatch</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2026</div>
+      <div class="cvContent">
+        <h3>Pantelis Antoniadis <span class="cvGloss">(Master's Research Project)</span></h3>
+        <div class="cvSubtitle">Perception of Stimuli on Convex Surfaces for Smartrings in Virtual Reality</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2026</div>
+      <div class="cvContent">
+        <h3>Vignesh Nagarajan Naidu <span class="cvGloss">(Master's Research Project)</span></h3>
+        <div class="cvSubtitle">Designing Micro Visualizations on a Curved E-Ink Display</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2025</div>
+      <div class="cvContent">
+        <h3>Mara Schulte <span class="cvGloss">(Bachelor's Thesis)</span></h3>
+        <div class="cvSubtitle">Visualization of Heart-Rate Data for OLED Smart Rings</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2025</div>
+      <div class="cvContent">
+        <h3>Kateryna Ganina <span class="cvGloss">(Bachelor's Thesis)</span></h3>
+        <div class="cvSubtitle">Redesigning Progress Charts of Smartwatch Complications</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2025</div>
+      <div class="cvContent">
+        <h3>Silas Kuhn <span class="cvGloss">(Bachelor's Thesis)</span></h3>
+        <div class="cvSubtitle">Development and Analysis of a Taxonomy for Augmented Reality in Safety Critical Environments</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2024</div>
+      <div class="cvContent">
+        <h3>Alaa Elghazaly <span class="cvGloss">(Master's Thesis)</span></h3>
+        <div class="cvSubtitle">Making Female Researchers More Visible to the General Public Through Augmented Reality</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2024</div>
+      <div class="cvContent">
+        <h3>Tim Halach <span class="cvGloss">(Master's Thesis)</span></h3>
+        <div class="cvSubtitle">AR Driving Assistant for Wheelchairs</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2024</div>
+      <div class="cvContent">
+        <h3>Simon Mittelhammer <span class="cvGloss">(Bachelor's Thesis)</span></h3>
+        <div class="cvSubtitle">Augmented Reality in Motion: Enhancement of Auditory Media</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">2024</div>
+      <div class="cvContent">
+        <h3>Ursula Krause <span class="cvGloss">(Bachelor's Thesis)</span></h3>
+        <div class="cvSubtitle">VisJacket: A Framework for Wearable Visualizations</div>
+        
+      </div>
+    </div>
+  </div>
+
+        <h2 class="yearHeading">Employment</h2>
+        
+  <div class="cvTimeline">
+    
+    <div class="cvEntry">
+      <div class="cvDate">Oct 2023 &ndash; Present</div>
+      <div class="cvContent">
+        <h3>Research Assistant (Ph.D. Candidate)</h3>
+        <div class="cvSubtitle">University of Stuttgart</div>
+        <ul><li>Teaching support: Information Visualization and Visual Analytics (Summer 2024; Winter 2024/25, 2025/26)</li><li>Teaching support: Bachelor Seminar (Summer 2024, 2025)</li><li>Teaching support: Master Seminar (Summer 2026)</li></ul>
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">Mar 2023 &ndash; Aug 2023</div>
+      <div class="cvContent">
+        <h3>Research Assistant</h3>
+        <div class="cvSubtitle">University of Cologne</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">Oct 2022 &ndash; Feb 2023</div>
+      <div class="cvContent">
+        <h3>Employee in Technology and Administration</h3>
+        <div class="cvSubtitle">University of Cologne</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">Apr 2021 &ndash; Sep 2022</div>
+      <div class="cvContent">
+        <h3>Student Research Assistant</h3>
+        <div class="cvSubtitle">University of Cologne</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">Feb 2019 &ndash; Aug 2020</div>
+      <div class="cvContent">
+        <h3>Working Student in Software Development</h3>
+        <div class="cvSubtitle">Valeo Germany</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">Apr 2018 &ndash; Sep 2018</div>
+      <div class="cvContent">
+        <h3>Tutor for Human-Computer Interaction</h3>
+        <div class="cvSubtitle">University of Stuttgart</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">Mar 2017</div>
+      <div class="cvContent">
+        <h3>Student Assistant at the "BTW" Conference</h3>
+        <div class="cvSubtitle">University of Stuttgart</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">Oct 2016 &ndash; Mar 2017</div>
+      <div class="cvContent">
+        <h3>Tutor for Media Informatics</h3>
+        <div class="cvSubtitle">University of Stuttgart</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">Sep 2013 &ndash; Mar 2016</div>
+      <div class="cvContent">
+        <h3>Part-time Job in Warehouse and Shipping</h3>
+        <div class="cvSubtitle">Mindvent GmbH</div>
+        
+      </div>
+    </div>
+    <div class="cvEntry">
+      <div class="cvDate">May 2011 &ndash; May 2013</div>
+      <div class="cvContent">
+        <h3>Part-time Job in Bicycle Assembly and Customer Service</h3>
+        <div class="cvSubtitle">Fahrrad Imle</div>
+        
+      </div>
+    </div>
+  </div>
+      </article>
+      
+<footer class="siteFooter" style="text-align: center">
+  © 2026 Chris Krauter. Hosted by GitHub Pages. Analytics by GoatCounter. Last updated: July 23, 2026.
+</footer>
+    </div>
+  </main>
+</body>
+
+</html>

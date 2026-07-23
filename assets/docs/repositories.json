@@ -1,0 +1,44 @@
+[
+  {
+    "name": "ChristianKrauter/VisRing",
+    "description": "Development code for the VisRing project, as part of our publication <a href=\"../pub/LuKrauter2025Visring.html\" target=\"_blank\" rel=\"noreferrer\">VisRing: A Display-Extended Smartring for Nano Visualizations</a>.",
+    "url": "https://github.com/ChristianKrauter/VisRing",
+    "image": "visring-software.png"
+  },
+  {
+    "name": "TaitingLu/VisRing",
+    "description": "Hardware designs and files for the VisRing project, as part of our publication <a href=\"../pub/LuKrauter2025Visring.html\" target=\"_blank\" rel=\"noreferrer\">VisRing: A Display-Extended Smartring for Nano Visualizations</a>.",
+    "url": "https://github.com/TaitingLu/VisRing",
+    "image": "visring-hardware.png"
+  },
+  {
+    "name": "ChristianKrauter/sitting-posture-review-material",
+    "description": "Supplemental material for our CHI 2024 paper <a href=\"../pub/krauter2024sitting.html\" target=\"_blank\" rel=\"noreferrer\">Sitting Posture Recognition and Feedback: A Literature Review</a>.",
+    "url": "https://github.com/ChristianKrauter/sitting-posture-review-material",
+    "image": "sitting-posture-review-material.png"
+  },
+  {
+    "name": "visvar/visvar.github.io",
+    "description": "Website of the HCI research group at the University of Stuttgart.",
+    "url": "https://github.com/visvar/visvar.github.io",
+    "image": "visvar-website.png"
+  },
+  {
+    "name": "ChristianKrauter/ChristianKrauter.github.io",
+    "description": "Source code for this personal website.",
+    "url": "https://github.com/ChristianKrauter/ChristianKrauter.github.io",
+    "image": "personal-website.png"
+  },
+  {
+    "name": "ChristianKrauter/osm-ocean-pathfinding",
+    "description": "Student project exploring pathfinding algorithms for waterways on a global scale.",
+    "url": "https://github.com/ChristianKrauter/osm-ocean-pathfinding",
+    "image": "osm-ocean-pathfinding.png"
+  },
+  {
+    "name": "ChristianKrauter/televisvr",
+    "description": "Student project exploring teleportation animations through a VR game.",
+    "url": "https://github.com/ChristianKrauter/televisvr",
+    "image": "televisvr.png"
+  }
+]
