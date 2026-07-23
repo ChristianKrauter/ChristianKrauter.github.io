@@ -48,8 +48,6 @@ Media file names must match the publication's citation key.
 
 - [assets/img/teaser/](./assets/img/teaser/) — publication teasers (`.png`)
 - [assets/pdf/](./assets/pdf/) — PDFs
-- [assets/suppl/](./assets/suppl/) — supplemental material (`.zip`)
-- [assets/video/](./assets/video/) — videos (`.mp4`); a second video for the same publication is named `{citation_key}_2.mp4`
 
 ### Bibliography Fields
 
@@ -96,7 +94,7 @@ Media file names must match the publication's citation key.
 - A link to the PDF, only needed if no PDF file exists under [Files](#files).
 
 `suppl`
-- A link to supplemental material, only needed if no file exists under [Files](#files).
+- A link to supplemental material.
 
 `acks`
 - Acknowledgements, shown on the publication's page.
@@ -160,8 +158,6 @@ git config --global core.autocrlf input
     - `teaser/` — publication teasers
     - `**/small` — thumbnails
   - `pdf/` — publication PDFs
-  - `suppl/` — supplemental material
-  - `video/` — videos
 - `pages/` — compiled standalone pages
   - `cv.html`
   - `publications.html`

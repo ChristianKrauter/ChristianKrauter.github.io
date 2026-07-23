@@ -15,8 +15,6 @@ mkdirSync('./assets/img/repos', { recursive: true })
 const allTeasers = new Set(readdirSync("assets/img/teaser"))
 const allQRs = new Set(readdirSync("assets/img/qr"))
 const allPdfs = new Set(readdirSync("assets/pdf"))
-const allVideos = new Set(readdirSync("assets/video"))
-const allSuppl = new Set(readdirSync("assets/suppl"))
 const allPubHTML = new Set(readdirSync("pub"))
 const allRepoImages = new Set(readdirSync("assets/img/repos"))
 
@@ -480,7 +478,7 @@ function createPublicationsHtml(publications) {
     const footnoteText = pub['FOOTNOTETEXT']
     const imageExists = allTeasers.has(`${key}.png`)
 
-    // PDF, video, and supplemental might be a link instead of file
+    // PDF might be a link instead of file
     let pdfLink = pub['PDF']
     let pdfFile = allPdfs.has(`${key}.pdf`)
     if (pdfFile) {
@@ -489,10 +487,7 @@ function createPublicationsHtml(publications) {
 
     let videoHTML = ''
     let videoLink = pub['VIDEO']
-    let videoFile = allVideos.has(`${key}.mp4`)
-    if (videoFile) {
-      videoHTML = `<a href="${p}/assets/video/${key}.mp4" target="_blank" rel="noreferrer" aria-label="Video for ${pub['TITLE']}">video${srOnlyText}</a>`
-    } else if (videoLink) {
+    if (videoLink) {
       if (videoLink.includes("youtube.com/embed")) {
         videoHTML = `<a href="https://www.youtube.com/watch?v=${videoLink.split("embed/")[1].split("?")[0]}" target="_blank" rel="noreferrer" aria-label="Video for ${pub['TITLE']}">video${srOnlyText}</a>`
       } else {
@@ -502,10 +497,7 @@ function createPublicationsHtml(publications) {
 
     let video2HTML = ''
     let video2Link = pub['VIDEO2']
-    let video2File = allVideos.has(`${key}_2.mp4`)
-    if (video2File) {
-      video2HTML = `<a href="${p}/assets/video/${key}_2.mp4" target="_blank" rel="noreferrer" aria-label="Second video for ${pub['TITLE']}">video${srOnlyText}</a>`
-    } else if (video2Link) {
+    if (video2Link) {
       if (video2Link.includes("youtube.com/embed")) {
         video2HTML = `<a href="https://www.youtube.com/watch?v=${video2Link.split("embed/")[1].split("?")[0]}" target="_blank" rel="noreferrer" aria-label="Second video for ${pub['TITLE']}">video${srOnlyText}</a>`
       } else {
@@ -514,10 +506,6 @@ function createPublicationsHtml(publications) {
     }
 
     let supplLink = pub['SUPPL']
-    let supplFile = allSuppl.has(`${key}.zip`)
-    if (supplFile) {
-      supplLink = `${p}/assets/suppl/${key}.zip`
-    }
 
     var footNoteIndicesList = []
     if (footNoteIndices) {
@@ -598,7 +586,7 @@ function createPublicationPageHtml(pub) {
   const footnoteText = pub['FOOTNOTETEXT']
   const imageExists = allTeasers.has(`${key}.png`)
 
-  // PDF, video, and supplemental might be a link instead of file
+  // PDF might be a link instead of file
   let pdfLink = pub['PDF']
   let pdfFile = allPdfs.has(`${key}.pdf`)
   if (pdfFile) {
@@ -607,10 +595,7 @@ function createPublicationPageHtml(pub) {
 
   let videoHTML = ''
   let videoLink = pub['VIDEO']
-  let videoFile = allVideos.has(`${key}.mp4`)
-  if (videoFile) {
-    videoHTML = `<a href="../assets/video/${key}.mp4" target="_blank" rel="noreferrer">video${srOnlyText}</a>`
-  } else if (videoLink) {
+  if (videoLink) {
     if (videoLink.includes("youtube.com/embed")) {
       videoHTML = `<p><iframe class="video" src="${videoLink}" title="Video for ${pub['TITLE']}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>`
     } else {
@@ -620,10 +605,7 @@ function createPublicationPageHtml(pub) {
 
   let video2HTML = ''
   let video2Link = pub['VIDEO2']
-  let video2File = allVideos.has(`${key}_2.mp4`)
-  if (video2File) {
-    video2HTML = `<a href="../assets/video/${key}_2.mp4" target="_blank" rel="noreferrer">video${srOnlyText}</a>`
-  } else if (video2Link) {
+  if (video2Link) {
     if (video2Link.includes("youtube.com/embed")) {
       video2HTML = `<p><iframe class="video" src="${video2Link}" title="Second video for ${pub['TITLE']}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>`
     } else {
@@ -632,10 +614,6 @@ function createPublicationPageHtml(pub) {
   }
 
   let supplLink = pub['SUPPL']
-  let supplFile = allSuppl.has(`${key}.zip`)
-  if (supplFile) {
-    supplLink = `../assets/suppl/${key}.zip`
-  }
 
   var footNoteIndicesList = []
   if (footNoteIndices) {
@@ -891,7 +869,7 @@ function reportMissingOrExtraInfo(publications) {
   // Extra files
   let extra = []
   const allKeys = new Set(publications.map(d => d['key']))
-  const allFiles = [...allTeasers, ...allPdfs, ...allVideos, ...allSuppl, ...allPubHTML]
+  const allFiles = [...allTeasers, ...allPdfs, ...allPubHTML]
   const ignore = new Set(["small", "people", "misc"])
   for (const f of allFiles) {
     const key = f.slice(0, f.lastIndexOf("."))
