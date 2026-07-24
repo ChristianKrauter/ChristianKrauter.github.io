@@ -758,7 +758,7 @@ function htmlHead(title, path = '.') {
  * Generates the HTML header of a page. The nav always shows the same links
  * (home, publications, cv) on every page, including the current one.
  * @param {'.'|'..'} [path=.] either '.' for index.html or '..' for others
- * @param {'home'|'publications'|'cv'|'publication'} pageType type of the current page
+ * @param {'home'|'publications'|'cv'|'repositories'|'publication'} pageType type of the current page
  * @returns {string} HTML code
  */
 function headerAndNav(path = '.', pageType) {
@@ -772,8 +772,11 @@ function headerAndNav(path = '.', pageType) {
   <div>
   <header>
     <div class="headerInner">
-      ${pageType === 'home' ? '' : `<div class="siteName">Chris Krauter</div>`}
-      <nav>
+      <button type="button" class="navToggle" onclick="toggleNav()" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation menu">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <div class="siteName">Chris Krauter</div>
+      <nav id="siteNav">
         <ul>
           <li><a href="${path}/"${currentAttr('home')}>about</a></li>
           <li><a href="${pageHref('publications')}"${currentAttr('publications')}>publications</a></li>
@@ -787,7 +790,8 @@ function headerAndNav(path = '.', pageType) {
     </div>
   </header>
 </div>
-<script src="${path}/assets/js/theme-toggle.js" defer></script>`
+<script src="${path}/assets/js/theme-toggle.js" defer></script>
+<script src="${path}/assets/js/nav-toggle.js" defer></script>`
 }
 
 /**

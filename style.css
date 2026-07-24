@@ -123,17 +123,18 @@ header {
   box-shadow: 0 2px 8px var(--shadowColor);
 }
 
-/* constrained to the same max-width/centering as main, so its content lines
-   up with the left edge of the page content instead of the viewport edge.
-   Horizontal padding matches main's, so there's always some breathing room
-   even when the viewport is barely wider than the content's max-width */
+/* max-width/padding match main, so content lines up with the page content's
+   left edge instead of the viewport edge. Below the tablet breakpoint:
+   hamburger - name - theme toggle in a 3-column grid; the name is centered
+   because the two icon buttons flanking it are the same size */
 .headerInner {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
-  display: flex;
   align-items: center;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
 }
 
 header h1 {
@@ -145,14 +146,7 @@ header h1 {
   font-weight: bold;
   font-size: 1.1em;
   color: var(--linkColor);
-}
-
-nav {
-  margin-left: auto;
-}
-
-nav ul li {
-  display: inline-block;
+  text-align: center;
 }
 
 article {
@@ -165,23 +159,65 @@ article {
  * Nav
  *
  */
-nav {
-  margin-top: 0;
-  padding-left: 10px;
+
+/* below the tablet breakpoint, the nav collapses into a hamburger-triggered
+   menu (nav ul, positioned fixed) instead of a horizontal link list */
+.navToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-left: auto;
+  padding: 0;
+  border: 1px solid var(--borderColor);
+  border-radius: 50%;
+  background: none;
+  color: var(--textColor);
+  font-size: 1em;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
+.navToggle:hover,
+.navToggle:focus-visible {
+  color: var(--linkColor);
+  border-color: var(--linkColor);
+}
+
+/* display: contents removes <nav> as a grid item of .headerInner, so its
+   3 columns are exactly the hamburger, the name, and the theme toggle */
+nav {
+  display: contents;
+}
+
+/* covers the viewport below the header (still on top via its higher
+   z-index), keeping the hamburger (now an X) and theme toggle reachable */
 nav ul {
-  padding: 0;
+  display: none;
+  position: fixed;
+  inset: 0;
   margin: 0;
+  padding: 90px 20px 20px;
   list-style: none;
-  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--bodyBgColor);
+  overflow-y: auto;
+  z-index: 99;
+}
+
+nav.navOpen ul {
+  display: flex;
 }
 
 nav ul li {
+  display: block;
   list-style: none;
-  font-size: 1.1em;
-  padding: 0 16px;
+  font-size: 1.3em;
+  padding: 0;
   line-height: 2.6em;
+  text-align: center;
 }
 
 nav ul ul li {
@@ -755,6 +791,43 @@ a[href*=".mp4" i][href*="visvar.github.io"]::after {
 
   html {
     scroll-padding-top: 90px;
+  }
+
+  /* enough width for a horizontal nav: hide the hamburger, reset the
+     full-screen menu and centered-name grid back to a plain inline layout */
+  .headerInner {
+    display: flex;
+    gap: 30px;
+  }
+
+  .siteName {
+    text-align: left;
+  }
+
+  .navToggle {
+    display: none;
+  }
+
+  nav {
+    display: block;
+    margin-left: auto;
+    padding-left: 10px;
+  }
+
+  nav ul {
+    display: block;
+    position: static;
+    padding: 0;
+    background: none;
+    border-bottom: none;
+    box-shadow: none;
+  }
+
+  nav ul li {
+    display: inline-block;
+    font-size: 1.1em;
+    padding: 0 16px;
+    text-align: left;
   }
 
   article {
