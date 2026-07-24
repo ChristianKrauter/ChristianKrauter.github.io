@@ -396,8 +396,17 @@ nav a[aria-current="page"]::after {
 }
 
 .avatarAndBio .bio {
+  /* .avatarAndBio's justify-items: center shrink-wraps grid items by
+     default; override back to full column width for the text side */
+  justify-self: stretch;
   padding: 10px;
   text-align: justify;
+}
+
+/* on the CV, unlike the About page, .bio's own padding still made
+   Languages/Interests narrower than the rest of the (unpadded) CV content */
+.cvAvatarBio .bio {
+  padding: 0;
 }
 
 .avatarAndBio img.avatar {
@@ -406,7 +415,7 @@ nav a[aria-current="page"]::after {
 }
 
 .furtherInfo {
-  padding: 10px;
+  /* no padding: .bio (its parent) already has some */
   display: grid;
   grid-template-columns: 1fr;
   gap: 15px;
@@ -440,16 +449,6 @@ nav a[aria-current="page"]::after {
  */
 .cvSections {
   grid-template-columns: 1fr;
-}
-
-/* on narrow screens, show the image below the text on the CV page only
-   (the about page on the main page keeps the image above the text) */
-.cvAvatarBio img.avatar {
-  order: 2;
-}
-
-.cvAvatarBio .bio {
-  order: 1;
 }
 
 /* subheadings (entry titles, supervision categories, etc.) stay visually
@@ -806,12 +805,6 @@ a[href*=".mp4" i][href*="visvar.github.io"]::after {
 
   .avatarAndBio .bio {
     padding: 10px 10px 10px 30px;
-  }
-
-  /* side-by-side from here up, so restore normal (image-first) order */
-  .cvAvatarBio img.avatar,
-  .cvAvatarBio .bio {
-    order: initial;
   }
 
   .cvEntry {

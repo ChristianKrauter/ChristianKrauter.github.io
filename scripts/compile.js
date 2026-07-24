@@ -298,10 +298,6 @@ function createCvPageHtml(resume) {
           <div class="bio">
             <div class="furtherInfo">
               <div>
-                <h2>Name</h2>
-                <p>${basics.name}</p>
-              </div>
-              <div>
                 <h2>Languages</h2>
                 <p>${languages.map(l => `${l.language} (${l.fluency})`).join(', ')}</p>
               </div>
