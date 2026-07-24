@@ -34,12 +34,6 @@ a:visited {
   text-decoration: none;
 }
 
-a.anchor {
-  position: relative;
-  top: -70px;
-  visibility: hidden;
-}
-
 h1 {
   margin-top: 0;
   margin-bottom: 18px;
@@ -390,37 +384,6 @@ nav a[aria-current="page"]::after {
 
 /*
  *
- * Main page member list
- *
- */
-.memberList {
-  max-width: 620px;
-  margin: auto;
-  display: grid;
-  row-gap: 20px;
-  text-align: center;
-  grid-template-columns: repeat(auto-fit, 20%);
-  justify-content: center;
-  justify-items: center;
-}
-
-.memberList img.avatar {
-  border-radius: 50%;
-  box-shadow: #bbb 1px 1px 15px;
-}
-
-.memberList a,
-.memberList a:hover {
-  color: var(--textColor);
-}
-
-.memberList a>div {
-  height: 30px;
-  font-size: 13.5px;
-}
-
-/*
- *
  * About pages
  *
  */
@@ -536,14 +499,6 @@ nav a[aria-current="page"]::after {
 .cvEntry .cvContent ul {
   margin: 6px 0 0;
   padding-left: 20px;
-}
-
-.cvList {
-  padding-left: 20px;
-}
-
-.cvList li {
-  margin-bottom: 6px;
 }
 
 /*
@@ -785,28 +740,13 @@ a[href*=".mp4" i][href*="visvar.github.io"]::after {
     scroll-padding-top: 90px;
   }
 
-  .memberNav {
-    display: none;
-  }
-
   article {
     grid-template-columns: auto;
-  }
-
-  .memberList img.avatar {
-    width: 64px;
-    height: 64px;
   }
 
   img.avatar {
     width: 128px;
     height: 128px;
-  }
-
-  /* Member list with pictures */
-  .memberList {
-    max-width: 100%;
-    grid-template-columns: repeat(auto-fit, 30%);
   }
 }
 
@@ -858,10 +798,6 @@ a[href*=".mp4" i][href*="visvar.github.io"]::after {
     grid-template-columns: 1fr 1fr;
   }
 
-  a.anchor {
-    top: -5px;
-  }
-
   .avatarAndBio {
     grid-template-columns: auto 1fr;
     justify-items: initial;
@@ -881,11 +817,6 @@ a[href*=".mp4" i][href*="visvar.github.io"]::after {
   .cvEntry {
     grid-template-columns: 160px 1fr;
     gap: 15px;
-  }
-
-  .memberList img.avatar {
-    width: 96px;
-    height: 96px;
   }
 
   img.avatar {
@@ -928,12 +859,6 @@ a[href*=".mp4" i][href*="visvar.github.io"]::after {
   .paper .metaData {
     padding-left: 25px;
   }
-
-  /* Member list with pictures */
-  .memberList {
-    max-width: 100%;
-    grid-template-columns: repeat(auto-fit, 25%);
-  }
 }
 
 /* desktop layout */
@@ -943,24 +868,8 @@ a[href*=".mp4" i][href*="visvar.github.io"]::after {
     scroll-padding-top: 90px;
   }
 
-  .memberNav {
-    display: block;
-  }
-
   article {
     grid-template-columns: 1fr 1fr;
-  }
-
-  a.anchor {
-    top: -5px;
-  }
-
-  /* Main page about infos */
-  .aboutFurtherInfo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 32px;
-    row-gap: 2px;
   }
 
   img.avatar {
@@ -984,11 +893,5 @@ a[href*=".mp4" i][href*="visvar.github.io"]::after {
   .paper h3,
   .paper .metaData {
     padding-left: 30px;
-  }
-
-  /* Member list with pictures */
-  .memberList {
-    max-width: 100%;
-    grid-template-columns: repeat(auto-fit, 20%);
   }
 }
