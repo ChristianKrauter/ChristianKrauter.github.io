@@ -88,11 +88,16 @@ body {
 }
 
 main {
+  /* auto margins center a flex item but don't stretch it, so without an
+     explicit width main would shrink to content width instead of 960px
+     (breaks on the gallery page, whose photos are absolutely positioned
+     and contribute no width) */
+  width: min(960px, 100%);
+  box-sizing: border-box;
   margin: 90px auto 0;
   display: flex;
   flex-direction: column;
   flex: 1;
-  max-width: 960px;
   padding: 10px 20px;
 }
 
@@ -413,7 +418,7 @@ nav a[aria-current="page"]::after {
 }
 
 .furtherInfo {
-  /* no padding: .bio (its parent) already has some */
+  padding: 10px 10px 10px 30px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 15px;
@@ -566,6 +571,95 @@ nav a[aria-current="page"]::after {
 
 .paper .metaData div.authors b {
   font-weight: 600;
+}
+
+/*
+ *
+ * Gallery page
+ *
+ */
+/* Justified-row layout (assets/js/gallery-layout.js): each photo's
+   position/size is set in JS from its real aspect ratio, so .gallery's own
+   height is set by JS too - absolutely positioned children don't
+   contribute to their parent's size on their own. */
+.gallery {
+  position: relative;
+}
+
+.galleryItem {
+  position: absolute;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.galleryItem img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--imageShadowColor) 1px 1px 15px;
+  transition: transform 0.2s ease;
+}
+
+.galleryItem:hover img,
+.galleryItem:focus-visible img {
+  transform: scale(1.02);
+}
+
+.lightbox {
+  border: none;
+  padding: 0;
+  background: none;
+  max-width: 92vw;
+  max-height: 92vh;
+  transition: opacity 0.18s ease, transform 0.18s ease, overlay 0.18s ease allow-discrete, display 0.18s ease allow-discrete;
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.lightbox[open] {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@starting-style {
+  .lightbox[open] {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.lightbox img {
+  display: block;
+  max-width: 92vw;
+  max-height: 92vh;
+  border-radius: 4px;
+}
+
+.lightbox .lightboxClose {
+  position: fixed;
+  top: 16px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.5em;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.lightbox .lightboxClose:hover,
+.lightbox .lightboxClose:focus-visible {
+  background: rgba(0, 0, 0, 0.75);
 }
 
 /*

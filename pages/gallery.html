@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      (function () {
+        var stored = localStorage.getItem('theme')
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        document.documentElement.setAttribute('data-theme', theme)
+      })()
+    </script>
+
+    <title>Photos - Chris Krauter</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="shortcut icon" href="../assets/img/misc/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/img/misc/favicon.png" sizes="256x256">
+    <link rel="apple-touch-icon" sizes="256x256" href="../assets/img/misc/favicon.png">
+
+    <!-- OG Metadata -->
+    <meta property="og:site_name" content="Chris Krauter" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Chris Krauter" />
+    <meta property="og:url" content="https://chriskrauter.de/" />
+    <meta property="og:description" content="Personal website of Chris Krauter" />
+    <meta property="og:image" content="https://chriskrauter.de/assets/img/misc/link_preview.jpg" />
+    <meta property="og:locale" content="EN" />
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title"  content="Chris Krauter" />
+    <meta name="twitter:description" content="Personal website of Chris Krauter" />
+    <meta name="twitter:image" content="https://chriskrauter.de/assets/img/misc/ck.jpg" />
+  </head>
+  
+
+<body>
+  <main>
+    
+  <div>
+  <header>
+    <div class="headerInner">
+      <button type="button" class="navToggle" onclick="toggleNav()" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation menu">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <div class="siteName">Chris Krauter</div>
+      <nav id="siteNav">
+        <ul>
+          <li><a href="../">about</a></li>
+          <li><a href="./publications.html">publications</a></li>
+          <li><a href="./repositories.html">repositories</a></li>
+          <li><a href="./gallery.html" aria-current="page">photos</a></li>
+          <li><a href="./cv.html">cv</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+</div>
+<script src="../assets/js/theme-toggle.js" defer></script>
+<script src="../assets/js/nav-toggle.js" defer></script>
+    <div class="pageContent">
+      <article>
+        <h1 id="gallery" class="title">Photos</h1>
+        <div class="gallery">
+          
+          <button type="button" class="galleryItem" data-aspect="0.5627" onclick="openLightbox('../assets/img/photos/20251230_154849.jpg', 'Photo: 20251230_154849')">
+            <img src="../assets/img/photos/small/20251230_154849.jpg" alt="Photo: 20251230_154849" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="0.5627" onclick="openLightbox('../assets/img/photos/20251009_111058.jpg', 'Photo: 20251009_111058')">
+            <img src="../assets/img/photos/small/20251009_111058.jpg" alt="Photo: 20251009_111058" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="0.5627" onclick="openLightbox('../assets/img/photos/20251008_205348.jpg', 'Photo: 20251008_205348')">
+            <img src="../assets/img/photos/small/20251008_205348.jpg" alt="Photo: 20251008_205348" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="0.6667" onclick="openLightbox('../assets/img/photos/20250926_211643_DSCF7272.JPG', 'Photo: 20250926_211643_DSCF7272')">
+            <img src="../assets/img/photos/small/20250926_211643_DSCF7272.JPG" alt="Photo: 20250926_211643_DSCF7272" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="0.6667" onclick="openLightbox('../assets/img/photos/20250903_182215_DSCF6923.JPG', 'Photo: 20250903_182215_DSCF6923')">
+            <img src="../assets/img/photos/small/20250903_182215_DSCF6923.JPG" alt="Photo: 20250903_182215_DSCF6923" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="1.0000" onclick="openLightbox('../assets/img/photos/20250622_124349_DSCF5617_cut.jpg', 'Photo: 20250622_124349_DSCF5617_cut')">
+            <img src="../assets/img/photos/small/20250622_124349_DSCF5617_cut.jpg" alt="Photo: 20250622_124349_DSCF5617_cut" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="0.6667" onclick="openLightbox('../assets/img/photos/20250413_130926_DSCF5379.JPG', 'Photo: 20250413_130926_DSCF5379')">
+            <img src="../assets/img/photos/small/20250413_130926_DSCF5379.JPG" alt="Photo: 20250413_130926_DSCF5379" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="0.6667" onclick="openLightbox('../assets/img/photos/20250412_091851_DSCF5368.JPG', 'Photo: 20250412_091851_DSCF5368')">
+            <img src="../assets/img/photos/small/20250412_091851_DSCF5368.JPG" alt="Photo: 20250412_091851_DSCF5368" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="0.6667" onclick="openLightbox('../assets/img/photos/20250103_150740_DSCF4453.JPG', 'Photo: 20250103_150740_DSCF4453')">
+            <img src="../assets/img/photos/small/20250103_150740_DSCF4453.JPG" alt="Photo: 20250103_150740_DSCF4453" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="1.4989" onclick="openLightbox('../assets/img/photos/20241231_180442_DSCF4234.jpg', 'Photo: 20241231_180442_DSCF4234')">
+            <img src="../assets/img/photos/small/20241231_180442_DSCF4234.jpg" alt="Photo: 20241231_180442_DSCF4234" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="1.4989" onclick="openLightbox('../assets/img/photos/20241231_175518_DSCF4225.JPG', 'Photo: 20241231_175518_DSCF4225')">
+            <img src="../assets/img/photos/small/20241231_175518_DSCF4225.JPG" alt="Photo: 20241231_175518_DSCF4225" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="0.6667" onclick="openLightbox('../assets/img/photos/20240728_151954_DSCF3164.JPG', 'Photo: 20240728_151954_DSCF3164')">
+            <img src="../assets/img/photos/small/20240728_151954_DSCF3164.JPG" alt="Photo: 20240728_151954_DSCF3164" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="0.6667" onclick="openLightbox('../assets/img/photos/20240524_075636_DSCF1976.JPG', 'Photo: 20240524_075636_DSCF1976')">
+            <img src="../assets/img/photos/small/20240524_075636_DSCF1976.JPG" alt="Photo: 20240524_075636_DSCF1976" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="1.4989" onclick="openLightbox('../assets/img/photos/20240521_094859_DSCF1761.JPG', 'Photo: 20240521_094859_DSCF1761')">
+            <img src="../assets/img/photos/small/20240521_094859_DSCF1761.JPG" alt="Photo: 20240521_094859_DSCF1761" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="0.6667" onclick="openLightbox('../assets/img/photos/20240519_172933_DSCF1468.JPG', 'Photo: 20240519_172933_DSCF1468')">
+            <img src="../assets/img/photos/small/20240519_172933_DSCF1468.JPG" alt="Photo: 20240519_172933_DSCF1468" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="0.5627" onclick="openLightbox('../assets/img/photos/20240516_001929.jpg', 'Photo: 20240516_001929')">
+            <img src="../assets/img/photos/small/20240516_001929.jpg" alt="Photo: 20240516_001929" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="1.4989" onclick="openLightbox('../assets/img/photos/20240511_114837_DSCF0472.JPG', 'Photo: 20240511_114837_DSCF0472')">
+            <img src="../assets/img/photos/small/20240511_114837_DSCF0472.JPG" alt="Photo: 20240511_114837_DSCF0472" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="1.3333" onclick="openLightbox('../assets/img/photos/20090824_054029.jpg', 'Photo: 20090824_054029')">
+            <img src="../assets/img/photos/small/20090824_054029.jpg" alt="Photo: 20090824_054029" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="1.3333" onclick="openLightbox('../assets/img/photos/20090821_110257.jpg', 'Photo: 20090821_110257')">
+            <img src="../assets/img/photos/small/20090821_110257.jpg" alt="Photo: 20090821_110257" loading="lazy" />
+          </button>
+          <button type="button" class="galleryItem" data-aspect="1.3333" onclick="openLightbox('../assets/img/photos/20090821_100245.jpg', 'Photo: 20090821_100245')">
+            <img src="../assets/img/photos/small/20090821_100245.jpg" alt="Photo: 20090821_100245" loading="lazy" />
+          </button>
+        </div>
+        <dialog class="lightbox" id="lightbox">
+          <button type="button" class="lightboxClose" onclick="closeLightbox()" aria-label="Close">&times;</button>
+          <img id="lightboxImage" src="" alt="" />
+        </dialog>
+      </article>
+      
+<footer class="siteFooter" style="text-align: center">
+  © 2026 Chris Krauter. Hosted by GitHub Pages. Analytics by GoatCounter. Last updated: July 24, 2026.
+</footer>
+    </div>
+  </main>
+  <script src="../assets/js/gallery-lightbox.js" defer></script>
+  <script src="../assets/js/gallery-layout.js" defer></script>
+</body>
+
+</html>

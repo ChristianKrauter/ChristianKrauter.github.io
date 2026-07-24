@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'node:fs'
 import QRCode from 'qrcode'
+import sharp from 'sharp'
 import { pageUrl, pageTitle, allowedMissingPDF, allowedPDFLink, allowedArxiv, allowedMissingDOI } from '../config.js'
 import pkg from 'bibtex-tidy'
 const { tidy } = pkg
@@ -17,6 +18,17 @@ const allQRs = new Set(readdirSync("assets/img/qr"))
 const allPdfs = new Set(readdirSync("assets/pdf"))
 const allPubHTML = new Set(readdirSync("pub"))
 const allRepoImages = new Set(readdirSync("assets/img/repos"))
+// real photos only (skips small/ and the manifest), newest-first by filename
+const allGalleryImages = [...readdirSync("assets/img/photos")]
+  .filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f))
+  .sort()
+  .reverse()
+
+// aspect ratio per photo, used by assets/js/gallery-layout.js
+const galleryAspectRatios = new Map(await Promise.all(allGalleryImages.map(async file => {
+  const { width, height } = await sharp(`assets/img/photos/small/${file}`).metadata()
+  return [file, width / height]
+})))
 
 // Load coauthor config
 const coauthorConfig = JSON.parse(readFileSync('./assets/docs/coauthors.json').toString())
@@ -89,6 +101,7 @@ console.log('Stats:')
 console.log(`  ${publications.length} publications`)
 console.log(`  ${allTeasers.size - 1} teasers`) // -1 for the 'small' folder
 console.log(`  ${allPdfs.size} pdfs`)
+console.log(`  ${allGalleryImages.length} gallery photos`)
 
 createPages()
 
@@ -112,6 +125,9 @@ async function createPages() {
 
   // Repositories page
   createRepositoriesPageHtml(repositoriesConfig)
+
+  // Gallery page
+  createGalleryPageHtml(allGalleryImages)
 
   // CV page
   createCvPageHtml(resume)
@@ -220,6 +236,57 @@ function createRepositoriesPageHtml(repositories) {
 }
 
 /**
+ * Creates the gallery page HTML. Internally named "gallery" everywhere
+ * (files, classes, nav); shown to visitors as "Photos".
+ * @param {string[]} galleryImages gallery image filenames
+ */
+function createGalleryPageHtml(galleryImages) {
+  const html = `${htmlHead(`Photos - ${pageTitle}`, '..')}
+
+<body>
+  <main>
+    ${headerAndNav('..', 'gallery')}
+    <div class="pageContent">
+      <article>
+        <h1 id="gallery" class="title">Photos</h1>
+        <div class="gallery">
+          ${galleryImages.map(file => {
+    const alt = galleryImageAlt(file)
+    const aspect = galleryAspectRatios.get(file)
+    return `
+          <button type="button" class="galleryItem" data-aspect="${aspect.toFixed(4)}" onclick="openLightbox('../assets/img/photos/${file}', '${alt}')">
+            <img src="../assets/img/photos/small/${file}" alt="${alt}" loading="lazy" />
+          </button>`
+  }).join('')}
+        </div>
+        <dialog class="lightbox" id="lightbox">
+          <button type="button" class="lightboxClose" onclick="closeLightbox()" aria-label="Close">&times;</button>
+          <img id="lightboxImage" src="" alt="" />
+        </dialog>
+      </article>
+      ${footer('..')}
+    </div>
+  </main>
+  <script src="../assets/js/gallery-lightbox.js" defer></script>
+  <script src="../assets/js/gallery-layout.js" defer></script>
+</body>
+
+</html>`
+  updateFile('./pages/gallery.html', html)
+}
+
+/**
+ * Derives alt text for a gallery photo from its filename, since there's no
+ * per-photo caption data
+ * @param {string} file gallery image filename
+ * @returns {string} alt text
+ */
+function galleryImageAlt(file) {
+  const stem = file.slice(0, file.lastIndexOf('.'))
+  return `Photo: ${stem.charAt(0).toUpperCase()}${stem.slice(1)}`
+}
+
+/**
  * Creates the "about" section HTML for the main page from the about config
  * @param {object} aboutConfig about page content
  * @returns {string} HTML
@@ -295,7 +362,6 @@ function createCvPageHtml(resume) {
 
         <div class="avatarAndBio cvAvatarBio">
           <img class="avatar" src="../assets/img/misc/ck.jpg" alt="${basics.name}" />
-          <div class="bio">
             <div class="furtherInfo">
               <div>
                 <h2>Languages</h2>
@@ -304,7 +370,6 @@ function createCvPageHtml(resume) {
               <div>
                 <h2>Interests</h2>
                 <p>${interests.map(i => i.name).join(', ')}</p>
-              </div>
             </div>
           </div>
         </div>
@@ -754,13 +819,13 @@ function htmlHead(title, path = '.') {
  * Generates the HTML header of a page. The nav always shows the same links
  * (home, publications, cv) on every page, including the current one.
  * @param {'.'|'..'} [path=.] either '.' for index.html or '..' for others
- * @param {'home'|'publications'|'cv'|'repositories'|'publication'} pageType type of the current page
+ * @param {'home'|'publications'|'cv'|'repositories'|'gallery'|'publication'} pageType type of the current page
  * @returns {string} HTML code
  */
 function headerAndNav(path = '.', pageType) {
   // pages/*.html are siblings, so they link to each other directly instead
   // of round-tripping through the site root
-  const inPages = ['cv', 'publications', 'repositories'].includes(pageType)
+  const inPages = ['cv', 'publications', 'repositories', 'gallery'].includes(pageType)
   const pageHref = (page) => inPages ? `./${page}.html` : `${path}/pages/${page}.html`
   const currentAttr = (match) => pageType === match ? ' aria-current="page"' : ''
 
@@ -776,8 +841,9 @@ function headerAndNav(path = '.', pageType) {
         <ul>
           <li><a href="${path}/"${currentAttr('home')}>about</a></li>
           <li><a href="${pageHref('publications')}"${currentAttr('publications')}>publications</a></li>
-          <li><a href="${pageHref('cv')}"${currentAttr('cv')}>cv</a></li>
           <li><a href="${pageHref('repositories')}"${currentAttr('repositories')}>repositories</a></li>
+          <li><a href="${pageHref('gallery')}"${currentAttr('gallery')}>photos</a></li>
+          <li><a href="${pageHref('cv')}"${currentAttr('cv')}>cv</a></li>
         </ul>
       </nav>
       <button type="button" class="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode">

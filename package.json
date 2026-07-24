@@ -5,9 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "npm run resizeThumbs && node ./scripts/compile.js",
+    "start": "npm run resizeThumbs && npm run watermark && npm run resizeGallery && node ./scripts/compile.js",
     "serve": "npx --yes serve .",
     "resizeThumbs": "node ./scripts/image-resizer.js assets/img/teaser 800",
+    "watermark": "node ./scripts/watermark.js assets/img/photos \"© Chris Krauter\" 1800",
+    "resizeGallery": "node ./scripts/image-resizer.js assets/img/photos 700",
     "ieeecopyright": "node ./scripts/add-copyright-ieee.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "upd": "npm-check-updates -u"
@@ -22,6 +24,7 @@
     "pdf-lib": "^1.17.1",
     "pdf-parse": "^2.4.5",
     "pdfjs-dist": "^5.5.207",
-    "qrcode": "^1.5.4"
+    "qrcode": "^1.5.4",
+    "sharp": "^0.35.3"
   }
 }

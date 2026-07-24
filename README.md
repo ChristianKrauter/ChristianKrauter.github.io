@@ -27,6 +27,15 @@ Authors not listed here render as plain, unlinked text in the publications list.
 
 The repositories page lists GitHub repos from [assets/docs/repositories.json](./assets/docs/repositories.json), a flat list of `{ name, description, url, image }` entries. Add, remove, or reorder entries directly; `description` may be left as an empty string to omit it. `image` is a filename in [assets/img/repos/](./assets/img/repos/); leave it empty or point to a file that doesn't exist yet, and the card just renders without an image.
 
+## Gallery
+
+The gallery page lists every image in [assets/img/photos/](./assets/img/photos/) (`.jpg`/`.jpeg`/`.png`/`.webp`), sorted newest-first by filename — name files so they sort chronologically (e.g. a `YYYYMMDD_...` prefix, which is what a camera/phone names photos by default), then just add, remove, or rename files there. Each photo is:
+
+1. Resized down (if needed) and watermarked, in place, replacing the original in one atomic pass (`npm run watermark` — see [scripts/watermark.js](./scripts/watermark.js)). Full-resolution camera originals aren't kept in the repo; the shown-in-the-lightbox version *is* the original file. Skips files already processed (tracked via `assets/img/photos/watermark-manifest.json`); dropping in a fresh original under the same filename re-triggers it.
+2. A `small/` thumbnail (shown in the grid) is generated from that (`npm run resizeGallery`, its own manifest at `assets/img/photos/small/images-manifest.json`, same skip-if-unchanged logic). Both steps are included in `npm start`.
+
+There's no caption data — alt text is auto-generated from the filename.
+
 ## Add Publications
 
 Add publications to [assets/docs/bibliography.bib](./assets/docs/bibliography.bib).
@@ -154,6 +163,7 @@ git config --global core.autocrlf input
     - `cleaned_bibstring.bib`
   - `img/` — images
     - `badges/` — award/badge icons
+    - `photos/` — gallery photos (`small/`/`large/` are compiled)
     - `misc/` — logo, favicon, etc.
     - `qr/` — QR code PNGs for publication pages
     - `teaser/` — publication teasers
@@ -161,6 +171,7 @@ git config --global core.autocrlf input
   - `pdf/` — publication PDFs
 - `pages/` — compiled standalone pages
   - `cv.html`
+  - `gallery.html`
   - `publications.html`
   - `repositories.html`
 - `pub/` — compiled publication pages
@@ -184,3 +195,4 @@ git config --global core.autocrlf input
 - [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) — updates dependencies (`npm run upd`)
 - [qrcode](https://www.npmjs.com/package/qrcode) — generates QR codes for publication pages
 - [pdf-lib](https://www.npmjs.com/package/pdf-lib) and [pdfjs-dist](https://www.npmjs.com/package/pdfjs-dist) — add the IEEE copyright notice to PDFs (`npm run ieeecopyright`)
+- [sharp](https://www.npmjs.com/package/sharp) — watermarks gallery photos (`npm run watermark`)
