@@ -95,13 +95,25 @@
     },
     {
       "organization": "MuC",
-      "position": "Student Volunteer Co-Chair",
+      "position": "Student Volunteer Co-Chair; External Reviewer",
+      "startDate": "2026",
+      "endDate": "2026"
+    },
+    {
+      "organization": "ACM EICS",
+      "position": "External Reviewer",
+      "startDate": "2026",
+      "endDate": "2026"
+    },
+    {
+      "organization": "IEEE VIS",
+      "position": "External Junior Reviewer",
       "startDate": "2026",
       "endDate": "2026"
     },
     {
       "organization": "MuC",
-      "position": "Student Volunteer, Day Captain",
+      "position": "Student Volunteer (Day Captain)",
       "startDate": "2025",
       "endDate": "2025"
     },
@@ -113,7 +125,7 @@
     },
     {
       "organization": "MuC",
-      "position": "Student Volunteer, Day Captain",
+      "position": "Student Volunteer (Day Captain); External Reviewer",
       "startDate": "2024",
       "endDate": "2024"
     },
