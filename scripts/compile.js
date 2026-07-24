@@ -190,7 +190,10 @@ function createRepositoriesPageHtml(repositories) {
         ${repositories.map(r => {
     const imageExists = r.image && allRepoImages.has(r.image)
     return `
-  <div class="paper">
+  <div class="paper ${imageExists ? '' : 'noImage'}">
+    <h3>
+      <a href="${r.url}" target="_blank" rel="noreferrer">${r.name}</a>
+    </h3>
     ${imageExists ? `
       <a href="${r.url}" target="_blank" rel="noreferrer">
         <img
@@ -200,10 +203,7 @@ function createRepositoriesPageHtml(repositories) {
           alt="Preview of ${r.name}"
         />
       </a>` : ''}
-    <div class="metaData ${imageExists ? '' : 'noImage'}">
-      <h3>
-        <a href="${r.url}" target="_blank" rel="noreferrer">${r.name}</a>
-      </h3>
+    <div class="metaData">
       ${r.description ? `<div>${r.description}</div>` : ''}
     </div>
   </div>
@@ -532,7 +532,11 @@ function createPublicationsHtml(publications) {
     return `
   ${i === 0 || year !== parseInt(publications[i - 1]['YEAR'])
         ? `<h2 class="yearHeading">${year}</h2>` : ''}
-  <div class="paper" id="paper${key}">
+  <div class="paper ${imageExists ? '' : 'noImage'}" id="paper${key}">
+    <h3>
+      <a href="${p}/pub/${key}.html"> ${badgesHTML}${pub['TITLE']}
+      </a>
+    </h3>
     ${imageExists
         ? `
       <a href="${p}/pub/${key}.html">
@@ -545,11 +549,7 @@ function createPublicationsHtml(publications) {
       </a>`
         : ''
       }
-    <div class="metaData ${imageExists ? '' : 'noImage'}">
-      <h3>
-        <a href="${p}/pub/${key}.html"> ${badgesHTML}${pub['TITLE']}
-        </a>
-      </h3>
+    <div class="metaData">
       <div class="authors">
         ${authorHtml}
       </div>

@@ -551,43 +551,53 @@ nav a[aria-current="page"]::after {
  * Publications on other pages
  *
  */
+/* on narrow screens, title/image/metadata stack instead of sitting
+   side-by-side. grid-template-areas places .paper's three direct children
+   (h3, the image, .metaData) independent of source order, without needing
+   flexbox/grid "order" (which reorders visually only, not for tab order) */
 .paper {
   margin-bottom: 0;
   display: grid;
   border-radius: 10px;
   padding: 15px;
-  grid-template-columns: 132px auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "title"
+    "image"
+    "rest";
+}
+
+.paper.noImage {
+  grid-template-areas:
+    "title"
+    "rest";
 }
 
 .paper h3 {
+  grid-area: title;
   margin-top: 0;
   margin-bottom: 8px;
   font-size: 15px;
   font-weight: 600;
 }
 
+/* the image is wrapped in a link, and that link (not the img itself) is
+   .paper's actual direct grid item, so the placement goes on it */
+.paper > a:has(img.publicationImage) {
+  grid-area: image;
+}
+
 .paper img.publicationImage {
-  grid-area: span 1 / span 2;
-  margin: 4px 0 15px 0;
   width: 100%;
+  margin: 4px 0 15px 0;
   border-radius: 6px;
   box-shadow: var(--imageShadowColor) 1px 1px 15px;
 }
 
-.paper img.publicationImage {
-  grid-area: span 1 / span 1;
-  width: 128px;
-}
-
 .paper .metaData {
-  padding-left: 15px;
+  grid-area: rest;
   font-size: 0.95em;
   color: var(--textColor2);
-}
-
-.paper .metaData.noImage {
-  grid-area: span 1 / span 2;
-  margin-left: 132px;
 }
 
 .paper .metaData div {
@@ -883,20 +893,40 @@ a[href*=".mp4" i][href*="visvar.github.io"]::after {
     height: 192px;
   }
 
+  /* side-by-side from here up: image on the left spanning both rows, title
+     and metadata stacked in the right column. The second column is 1fr, not
+     auto: auto sizes a track to fit its content, leaving the card narrower
+     than the container on entries with short text. grid-template-rows is
+     explicit so the image (spanning both rows) can't inflate the title
+     row's height beyond its own content */
   .paper {
-    grid-template-columns: 192px auto;
+    grid-template-columns: 192px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "image title"
+      "image rest";
+  }
+
+  .paper.noImage {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "title"
+      "rest";
+  }
+
+  .paper.noImage h3,
+  .paper.noImage .metaData {
+    margin-left: 192px;
   }
 
   .paper img.publicationImage {
     width: 192px;
   }
 
+  .paper h3,
   .paper .metaData {
     padding-left: 25px;
-  }
-
-  .paper .metaData.noImage {
-    margin-left: 192px;
   }
 
   /* Member list with pictures */
@@ -939,19 +969,21 @@ a[href*=".mp4" i][href*="visvar.github.io"]::after {
   }
 
   .paper {
-    grid-template-columns: 256px auto;
+    grid-template-columns: 256px 1fr;
+  }
+
+  .paper.noImage h3,
+  .paper.noImage .metaData {
+    margin-left: 256px;
   }
 
   .paper img.publicationImage {
     width: 256px;
   }
 
+  .paper h3,
   .paper .metaData {
     padding-left: 30px;
-  }
-
-  .paper .metaData.noImage {
-    margin-left: 256px;
   }
 
   /* Member list with pictures */
