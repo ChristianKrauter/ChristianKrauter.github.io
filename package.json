@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "npm run resizeThumbs && node ./scripts/compile.js",
+    "serve": "npx --yes serve .",
     "resizeThumbs": "node ./scripts/image-resizer.js assets/img/teaser 800",
     "ieeecopyright": "node ./scripts/add-copyright-ieee.js",
     "test": "echo \"Error: no test specified\" && exit 1",

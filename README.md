@@ -127,7 +127,8 @@ Requires [Node.js and npm](https://nodejs.org/en/).
 1. Run `npm i` to install/update dependencies.
 2. Run `git pull` to make sure the local repo is up to date.
 3. Run `npm start` to compile the site. Missing files or bibliography fields are printed to the console — check that output.
-4. Open `index.html` in a browser to inspect the result. Hard-refresh (Ctrl+F5) to see changes, since the browser will otherwise serve a cached version.
+4. Run `npm run serve` and open the printed `localhost` URL to inspect the result. Hard-refresh (Ctrl+F5) to see changes, since the browser will otherwise serve a cached version.
+   - Opening `index.html` directly (`file://`) mostly works too, but some things behave differently or break: nav links to the site root (`./`) list the folder contents instead of loading `index.html`, since only a real server resolves that the way GitHub Pages does; and the theme toggle won't persist across pages, since Chromium partitions `localStorage` per file under `file://`.
 
 If compiling fails with a strange error, check whether [Microsoft HPC Pack is installed](https://stackoverflow.com/a/29579878) — it ships another `node.exe` that can shadow the real one.
 
@@ -161,6 +162,7 @@ git config --global core.autocrlf input
 - `pages/` — compiled standalone pages
   - `cv.html`
   - `publications.html`
+  - `repositories.html`
 - `pub/` — compiled publication pages
 - `scripts/` — compile scripts
 - `config.js` — page metadata (title, URL, bibliography exemption lists)
