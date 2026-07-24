@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "npm run resizeThumbs && node ./scripts/compile.js",
-    "resizeThumbs": "node ./scripts/image-resizer.js assets/img/teaser 256",
+    "resizeThumbs": "node ./scripts/image-resizer.js assets/img/teaser 800",
     "ieeecopyright": "node ./scripts/add-copyright-ieee.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "upd": "npm-check-updates -u"
