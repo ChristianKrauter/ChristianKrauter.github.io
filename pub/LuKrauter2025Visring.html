@@ -42,8 +42,11 @@
   <div>
   <header>
     <div class="headerInner">
+      <button type="button" class="navToggle" onclick="toggleNav()" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation menu">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
       <div class="siteName">Chris Krauter</div>
-      <nav>
+      <nav id="siteNav">
         <ul>
           <li><a href="../">about</a></li>
           <li><a href="../pages/publications.html">publications</a></li>
@@ -58,6 +61,7 @@
   </header>
 </div>
 <script src="../assets/js/theme-toggle.js" defer></script>
+<script src="../assets/js/nav-toggle.js" defer></script>
         <div class="pageContent">
           <article>
             <h1> <img style="height:1em; width:auto; vertical-align: sub;" src="../assets/img/badges/openaccess.png" alt="openaccess badge"/> VisRing: A Display-Extended Smartring for Nano Visualizations</h1>
@@ -112,7 +116,7 @@
           </article>
           
 <footer class="siteFooter" style="text-align: center">
-  © 2026 Chris Krauter. Hosted by GitHub Pages. Analytics by GoatCounter. Last updated: July 23, 2026.
+  © 2026 Chris Krauter. Hosted by GitHub Pages. Analytics by GoatCounter. Last updated: July 24, 2026.
 </footer>
         </div>
       </main>
