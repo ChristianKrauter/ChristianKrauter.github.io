@@ -313,16 +313,14 @@ nav a[aria-current="page"]::after {
  *
  */
 .social-links {
-  gap: 28px;
+  gap: 20px 28px;
   align-items: center;
   max-width: 620px;
   margin: 30px auto 0;
-  display: grid;
-  row-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
-  grid-template-columns: repeat(auto-fit, 5%);
   justify-content: center;
-  justify-items: center;
 }
 
 .icon-link,
