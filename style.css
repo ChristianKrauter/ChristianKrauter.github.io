@@ -418,16 +418,15 @@ nav a[aria-current="page"]::after {
 }
 
 .furtherInfo {
-  padding: 10px 10px 10px 30px;
+  padding: 10px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 15px;
+  gap: 20px;
 }
 
 .furtherInfo h2 {
   font-size: 1em;
-  margin-top: 0;
-  margin-bottom: 6px;
+  margin: 0;
 }
 
 .furtherInfo p {
@@ -896,6 +895,10 @@ a[href*=".mp4" i][href*="visvar.github.io"]::after {
   }
 
   .avatarAndBio .bio {
+    padding: 10px 10px 10px 30px;
+  }
+
+  .furtherInfo {
     padding: 10px 10px 10px 30px;
   }
 
