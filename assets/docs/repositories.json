@@ -6,12 +6,6 @@
     "image": "visring-software.png"
   },
   {
-    "name": "TaitingLu/VisRing",
-    "description": "Hardware designs and files for the VisRing project, as part of our publication <a href=\"../pub/LuKrauter2025Visring.html\" target=\"_blank\" rel=\"noreferrer\">VisRing: A Display-Extended Smartring for Nano Visualizations</a>.",
-    "url": "https://github.com/TaitingLu/VisRing",
-    "image": "visring-hardware.png"
-  },
-  {
     "name": "ChristianKrauter/sitting-posture-review-material",
     "description": "Supplemental material for our CHI 2024 paper <a href=\"../pub/krauter2024sitting.html\" target=\"_blank\" rel=\"noreferrer\">Sitting Posture Recognition and Feedback: A Literature Review</a>.",
     "url": "https://github.com/ChristianKrauter/sitting-posture-review-material",
