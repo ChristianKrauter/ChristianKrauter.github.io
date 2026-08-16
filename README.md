@@ -9,6 +9,7 @@ Commit and push changes to `main` to publish them. A GitHub Action compiles and 
 To preview changes locally:
 1. Run `npm i` to install/update dependencies.
 2. Run `npm start` to [compile](#compiling) the page.
+3. Run `npm run serve` to 
 
 ## About Page
 
@@ -16,25 +17,22 @@ The main page's "about" content lives in [assets/docs/about.json](./assets/docs/
 
 ## CV
 
-The CV page is generated from [assets/docs/resume.json](./assets/docs/resume.json), a [JSON Resume](https://jsonresume.org/schema/) file. Edit the fields directly, following that schema.
+The CV page is generated from [assets/docs/resume.json](./assets/docs/resume.json), a [JSON Resume](https://jsonresume.org/schema/) file.
 
 ## Coauthors
 
 Coauthor profile links live in [assets/docs/coauthors.json](./assets/docs/coauthors.json) as a flat list of `{ name, link }` entries.
-Authors not listed here render as plain, unlinked text in the publications list.
 
 ## Repositories
 
-The repositories page lists GitHub repos from [assets/docs/repositories.json](./assets/docs/repositories.json), a flat list of `{ name, description, url, image }` entries. Add, remove, or reorder entries directly; `description` may be left as an empty string to omit it. `image` is a filename in [assets/img/repos/](./assets/img/repos/); leave it empty or point to a file that doesn't exist yet, and the card just renders without an image.
+The repositories page lists GitHub repos from [assets/docs/repositories.json](./assets/docs/repositories.json), a flat list of `{ name, description, url, image }` entries. Add, remove, or reorder entries directly; `description` may be left as an empty string to omit it. `image` is a filename in [assets/img/repos/](./assets/img/repos/).
 
 ## Gallery
 
-The gallery page lists every image in [assets/img/photos/](./assets/img/photos/) (`.jpg`/`.jpeg`/`.png`/`.webp`), sorted newest-first by filename — name files so they sort chronologically (e.g. a `YYYYMMDD_...` prefix, which is what a camera/phone names photos by default), then just add, remove, or rename files there. Each photo is:
+The gallery page lists every image in [assets/img/photos/](./assets/img/photos/) (`.jpg`/`.jpeg`/`.png`/`.webp`), sorted by filename[^1]. Each photo is:
 
-1. Resized down (if needed) and watermarked, in place, replacing the original in one atomic pass (`npm run watermark` — see [scripts/watermark.js](./scripts/watermark.js)). Full-resolution camera originals aren't kept in the repo; the shown-in-the-lightbox version *is* the original file. Skips files already processed (tracked via `assets/img/photos/watermark-manifest.json`); dropping in a fresh original under the same filename re-triggers it.
-2. A `small/` thumbnail (shown in the grid) is generated from that (`npm run resizeGallery`, its own manifest at `assets/img/photos/small/images-manifest.json`, same skip-if-unchanged logic). Both steps are included in `npm start`.
-
-There's no caption data — alt text is auto-generated from the filename.
+1. Resized down and watermarked in place (`npm run watermark` — see [scripts/watermark.js](./scripts/watermark.js)). Skips files already processed (tracked via `assets/img/photos/watermark-manifest.json`).
+2. A `small/` thumbnail (shown in the grid) is generated with its own tracking manifest at `assets/img/photos/small/images-manifest.json`.
 
 ## Add Publications
 
@@ -45,18 +43,15 @@ Add publications to [assets/docs/bibliography.bib](./assets/docs/bibliography.bi
 - Unicode (e.g., é, â) is allowed. LaTeX commands (e.g., `\c{c}`, `\"{a}`) are not.
 - Add as much information as possible.
 - Use **bibstrings** where possible (see [booktitle](#booktitle)).
-- Clean up entries the way they'd appear in a camera-ready paper's references.
-- Always add a teaser. If the paper has no figures, use a screenshot of the first page (title + authors).
-- Add PDFs as files where the publisher's policy allows it. Check [Open Policy Finder](https://openpolicyfinder.jisc.ac.uk/) for the specific policy.
-  - ACM usually allows the author's version; IEEE usually requires a copyright notice on the first page. Verify this yourself — the policy is the author's responsibility, not this script's.
-  - Add the IEEE copyright notice with `npm run ieeecopyright -- <citationkey>` (pass the year as a second argument if the key doesn't include one). The script checks whether the notice is already on the first page; it does not OCR images.
+- Always add a teaser (also get smaller thumbnails).
+- Add PDFs as files where the publisher's policy allows it[^2]
 
 ### Files
 
 Media file names must match the publication's citation key.
 
 - [assets/img/teaser/](./assets/img/teaser/) — publication teasers (`.png`)
-- [assets/pdf/](./assets/pdf/) — PDFs
+- [assets/pdf/](./assets/pdf/) — PDFs; a poster goes alongside it as `<citation key>-poster.pdf`
 
 ### Bibliography Fields
 
@@ -70,19 +65,19 @@ Media file names must match the publication's citation key.
   - `First von Last`
   - `von Last, First`
   - `von Last, Jr, First`
-  - e.g. `author = {Christian Krauter and Michael Sedlmair},` or `author = {Krauter, Christian and Sedlmair, Michael},`
+  - e.g., `author = {Christian Krauter and Michael Sedlmair},` or `author = {Krauter, Christian and Sedlmair, Michael},`
 
 `year` and `month`
 - Use year and month, not a full date. Month is numeric (January = `01`).
 
 `doi`
-- Full DOI URL, not just the DOI (`https://doi.org/<doi>`).
+- Full **DOI URL** (`https://doi.org/<doi>`), not just the DOI.
 
 <div id="booktitle"></div>
 
 `booktitle` / `journal`
-- Use the shorthand defined in [cleaned_bibstring.bib](./assets/docs/cleaned_bibstring.bib) (no braces) — it gets replaced automatically, e.g. `booktitle = CHI,`. The expanded full name is what's shown as the publication's venue.
-- If no shorthand exists yet for a venue, add one to `cleaned_bibstring.bib`.
+- Use the shorthand defined in [cleaned_bibstring.bib](./assets/docs/cleaned_bibstring.bib) (no braces) — it gets replaced automatically, e.g. `booktitle = CHI,`. The expanded full name is shown as the publication's venue.
+- If no shorthand exists yet for a venue, add it to `cleaned_bibstring.bib`.
 
 `publisher`
 - Use the short form (`ACM`, not "Association for Computing Machinery").
@@ -101,6 +96,9 @@ Media file names must match the publication's citation key.
 
 `pdf`
 - A link to the PDF, only needed if no PDF file exists under [Files](#files).
+
+`poster`
+- A link to a poster PDF, only needed if no poster file exists under [Files](#files).
 
 `suppl`
 - A link to supplemental material.
@@ -133,23 +131,14 @@ Media file names must match the publication's citation key.
 
 Requires [Node.js and npm](https://nodejs.org/en/).
 
-1. Run `npm i` to install/update dependencies.
-2. Run `git pull` to make sure the local repo is up to date.
-3. Run `npm start` to compile the site. Missing files or bibliography fields are printed to the console — check that output.
-4. Run `npm run serve` and open the printed `localhost` URL to inspect the result. Hard-refresh (Ctrl+F5) to see changes, since the browser will otherwise serve a cached version.
-   - Opening `index.html` directly (`file://`) mostly works too, but some things behave differently or break: nav links to the site root (`./`) list the folder contents instead of loading `index.html`, since only a real server resolves that the way GitHub Pages does; and the theme toggle won't persist across pages, since Chromium partitions `localStorage` per file under `file://`.
-
-If compiling fails with a strange error, check whether [Microsoft HPC Pack is installed](https://stackoverflow.com/a/29579878) — it ships another `node.exe` that can shadow the real one.
+1. Run `git pull` to make sure the local repo is up-to-date.
+2. Run `npm i` to install/update dependencies.
+3. Run `npm start` to compile the site[^3].
+4. Run `npm run serve` and open the printed URL[^4].
 
 ## Publishing
 
-Commit and push to `main`; the GitHub Action compiles and deploys automatically.
-
-If git reports changed files with no visible diff, it's a line-ending issue. Fix it with:
-
-```
-git config --global core.autocrlf input
-```
+Commit[^5] and push to `main`; the GitHub Action compiles and deploys automatically.
 
 # Repository Structure
 
@@ -163,11 +152,10 @@ git config --global core.autocrlf input
     - `cleaned_bibstring.bib`
   - `img/` — images
     - `badges/` — award/badge icons
-    - `photos/` — gallery photos (`small/`/`large/` are compiled)
+    - `photos/` — gallery photos (`small/` is compiled)
     - `misc/` — logo, favicon, etc.
-    - `qr/` — QR code PNGs for publication pages
-    - `teaser/` — publication teasers
-    - `**/small` — thumbnails
+    - `qr/` — QR code PNGs for publication pages (compiled)
+    - `teaser/` — publication teasers (`small/` is compiled)
   - `pdf/` — publication PDFs
 - `pages/` — compiled standalone pages
   - `cv.html`
@@ -191,8 +179,15 @@ git config --global core.autocrlf input
 
 - [bibtex-parse](https://www.npmjs.com/package/bibtex-parse) — parses the bibliography
 - [bibtex-tidy](https://www.npmjs.com/package/bibtex-tidy) — formats the bibtex shown on each publication's page
-- [image-js](https://www.npmjs.com/package/image-js) — generates thumbnail images (`npm run resizeThumbs`)
+- [image-js](https://www.npmjs.com/package/image-js) — generates thumbnail images
 - [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) — updates dependencies (`npm run upd`)
 - [qrcode](https://www.npmjs.com/package/qrcode) — generates QR codes for publication pages
 - [pdf-lib](https://www.npmjs.com/package/pdf-lib) and [pdfjs-dist](https://www.npmjs.com/package/pdfjs-dist) — add the IEEE copyright notice to PDFs (`npm run ieeecopyright`)
 - [sharp](https://www.npmjs.com/package/sharp) — watermarks gallery photos (`npm run watermark`)
+
+[^1]: Name `YYYYMMDD_...` to sort chronologically.
+[^2]: Verify yourself with the publisher/at [Open Policy Finder](https://openpolicyfinder.jisc.ac.uk/). IEEE usually requires a copyright notice on the first page; add it with `npm run ieeecopyright -- <citationkey> <year>` (year optional in case key doesn't include it). The script checks whether the notice is already on the first page.
+[^3]: If compiling fails, check whether [Microsoft HPC Pack is installed](https://stackoverflow.com/a/29579878) as it ships another `node.exe` that can shadow the real one.
+[^4]: Ensures all features work correctly (dark/light mode toggle, nav link to start page)
+[^5]: If git reports changed files with no visible diff, it's a line-ending issue. Fix it with: `git config --global core.autocrlf input
+`
