@@ -546,6 +546,13 @@ function createPublicationsHtml(publications) {
       pdfLink = `${p}/assets/pdf/${key}.pdf`
     }
 
+    // Poster might be a link instead of file
+    let posterLink = pub['POSTER']
+    let posterFile = allPdfs.has(`${key}-poster.pdf`)
+    if (posterFile) {
+      posterLink = `${p}/assets/pdf/${key}-poster.pdf`
+    }
+
     let videoHTML = ''
     let videoLink = pub['VIDEO']
     if (videoLink) {
@@ -623,6 +630,7 @@ function createPublicationsHtml(publications) {
         ${url && url !== '' ? `<a href="${url}" target="_blank" rel="noreferrer" aria-label="Link for ${pub['TITLE']}">link${srOnlyText}</a>` : ''}
         ${url2 && url2 !== '' ? `<a href="${url2}" target="_blank" rel="noreferrer" aria-label="Additional link for ${pub['TITLE']}">link${srOnlyText}</a>` : ''}
         ${pdfLink ? `<a href="${pdfLink}" target="_blank" rel="noreferrer" aria-label="PDF for ${pub['TITLE']}">PDF${srOnlyText}</a>` : ''}
+        ${posterLink ? `<a href="${posterLink}" target="_blank" rel="noreferrer" aria-label="Poster for ${pub['TITLE']}">poster${srOnlyText}</a>` : ''}
         ${supplLink ? `<a href="${supplLink}" target="_blank" rel="noreferrer" aria-label="Supplemental material for ${pub['TITLE']}">supplemental${srOnlyText}</a>` : ''}
         ${videoHTML}
         ${video2HTML}
@@ -652,6 +660,13 @@ function createPublicationPageHtml(pub) {
   let pdfFile = allPdfs.has(`${key}.pdf`)
   if (pdfFile) {
     pdfLink = `../assets/pdf/${key}.pdf`
+  }
+
+  // Poster might be a link instead of file
+  let posterLink = pub['POSTER']
+  let posterFile = allPdfs.has(`${key}-poster.pdf`)
+  if (posterFile) {
+    posterLink = `../assets/pdf/${key}-poster.pdf`
   }
 
   let videoHTML = ''
@@ -736,6 +751,7 @@ function createPublicationPageHtml(pub) {
                   ${url && url !== '' ? `<a href="${url}" target="_blank" rel="noreferrer">link${srOnlyText}</a>` : ''}
                   ${url2 && url2 !== '' ? `<a href="${url2}" target="_blank" rel="noreferrer">link${srOnlyText}</a>` : ''}
                   ${pdfLink ? `<a href="${pdfLink}" target="_blank" rel="noreferrer">PDF${srOnlyText}</a>` : ''}
+                  ${posterLink ? `<a href="${posterLink}" target="_blank" rel="noreferrer">poster${srOnlyText}</a>` : ''}
                   ${supplLink ? `<a href="${supplLink}" target="_blank" rel="noreferrer">supplemental${srOnlyText}</a>` : ''}
                   ${videoHTML}
                   ${video2HTML}
@@ -938,7 +954,9 @@ function reportMissingOrExtraInfo(publications) {
   const allFiles = [...allTeasers, ...allPdfs, ...allPubHTML]
   const ignore = new Set(["small", "people", "misc"])
   for (const f of allFiles) {
-    const key = f.slice(0, f.lastIndexOf("."))
+    // strip a trailing "-poster" so a poster PDF resolves to its
+    // publication's own key instead of being flagged as an extra file
+    const key = f.slice(0, f.lastIndexOf(".")).replace(/-poster$/, '')
     if (!allKeys.has(key) && !ignore.has(f)) {
       extra.push(f)
     }
@@ -1058,7 +1076,7 @@ function reportMissingOrExtraInfo(publications) {
 function formatBibtex(key, bibtexString) {
   try {
     const formatted = tidy(bibtexString, {
-      omit: ['abstract', 'acks', 'address', 'badge', 'note', 'pdf', 'suppl', 'url2', 'video', 'video2', 'footnoteindices', 'footnotetext', 'cleanedauthors'],
+      omit: ['abstract', 'acks', 'address', 'badge', 'note', 'pdf', 'poster', 'suppl', 'url2', 'video', 'video2', 'footnoteindices', 'footnotetext', 'cleanedauthors'],
       curly: true,
       space: 4,
       align: 14,
@@ -1069,7 +1087,7 @@ function formatBibtex(key, bibtexString) {
     })
     return formatted.bibtex
   } catch (e) {
-    console.warn(`Invalid bibtex for pub with key ${key}`)
+    console.warn(`Invalid bibtex for pub with key ${key}: ${e}`)
     return bibtexString
   }
 }
