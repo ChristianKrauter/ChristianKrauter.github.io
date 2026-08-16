@@ -390,18 +390,11 @@ function createCvPageHtml(resume) {
   })), { plainDate: true })}
 
         <h2 class="yearHeading">Academic Volunteering</h2>
-        ${(() => {
-      let svGlossShown = false
-      return cvTimelineHtml(volunteer.map(v => {
-        const showGloss = v.position.includes('Student Volunteer') && !svGlossShown
-        if (showGloss) svGlossShown = true
-        return {
-          date: cvDateRange(v.startDate, v.endDate),
-          title: formatVolunteerPosition(v.position, showGloss),
-          subtitle: v.organization
-        }
-      }), { plainDate: true })
-    })()}
+        ${cvTimelineHtml(volunteer.map(v => ({
+      date: cvDateRange(v.startDate, v.endDate),
+      title: v.position,
+      subtitle: v.organization
+    })), { plainDate: true })}
 
         <h2 class="yearHeading">Student Supervision</h2>
         ${cvTimelineHtml(projects.flatMap(p => {
@@ -473,20 +466,6 @@ function cvTimelineHtml(entries, { plainDate = false } = {}) {
       </div>
     </div>`).join('')}
   </div>`
-}
-
-/**
- * Abbreviates "Student Volunteer" to "SV", inserting a plain-weight "(Student
- * Volunteer)" gloss directly after it only when requested (the caller shows the
- * gloss once, on the first entry that uses the abbreviation)
- * @param {string} position volunteer position title
- * @param {boolean} includeGloss whether to insert the "(Student Volunteer)" gloss
- * @returns {string} HTML
- */
-function formatVolunteerPosition(position, includeGloss) {
-  if (!position.includes('Student Volunteer')) return position
-  const replacement = includeGloss ? 'SV <span class="cvGloss">(Student Volunteer)</span>' : 'SV'
-  return position.replace(/Student Volunteer/g, replacement)
 }
 
 /**

@@ -88,49 +88,49 @@
   ],
   "volunteer": [
     {
-      "organization": "CHI",
-      "position": "Assistant to the Visualization Subcommittee Chairs",
-      "startDate": "2026",
-      "endDate": "2026"
-    },
-    {
-      "organization": "MuC",
+      "organization": "Mensch und Computer (MuC)",
       "position": "Student Volunteer Co-Chair; External Reviewer",
       "startDate": "2026",
       "endDate": "2026"
     },
     {
-      "organization": "ACM EICS",
+      "organization": "ACM Conference on Human Factors in Computing Systems (CHI)",
+      "position": "Assistant to the Visualization Subcommittee Chairs",
+      "startDate": "2026",
+      "endDate": "2026"
+    },
+    {
+      "organization": "ACM Symposium on Engineering Interactive Computing Systems (EICS)",
       "position": "External Reviewer",
       "startDate": "2026",
       "endDate": "2026"
     },
     {
-      "organization": "IEEE VIS",
+      "organization": "IEEE Visualization Conference (VIS)",
       "position": "External Junior Reviewer",
       "startDate": "2026",
       "endDate": "2026"
     },
     {
-      "organization": "MuC",
+      "organization": "Mensch und Computer (MuC)",
       "position": "Student Volunteer (Day Captain)",
       "startDate": "2025",
       "endDate": "2025"
     },
     {
-      "organization": "UIST",
+      "organization": "ACM Symposium on User Interface Software and Technology (UIST)",
       "position": "Student Volunteer",
       "startDate": "2025",
       "endDate": "2025"
     },
     {
-      "organization": "MuC",
+      "organization": "Mensch und Computer (MuC)",
       "position": "Student Volunteer (Day Captain); External Reviewer",
       "startDate": "2024",
       "endDate": "2024"
     },
     {
-      "organization": "MuC",
+      "organization": "Mensch und Computer (MuC)",
       "position": "Student Volunteer",
       "startDate": "2023",
       "endDate": "2023"
@@ -166,7 +166,7 @@
     {
       "title": "'Life Time Day Captain' (student volunteer)",
       "date": "2025",
-      "awarder": "MuC"
+      "awarder": "Mensch und Computer (MuC)"
     },
     {
       "title": "'Out-of-the-box Design'",
@@ -176,12 +176,12 @@
     {
       "title": "'Leadership Legend' (student volunteer)",
       "date": "2024",
-      "awarder": "MuC"
+      "awarder": "Mensch und Computer"
     },
     {
       "title": "'Most Nominations for Awards' (student volunteer)",
       "date": "2024",
-      "awarder": "MuC"
+      "awarder": "Mensch und Computer (MuC)"
     }
   ],
   "languages": [
