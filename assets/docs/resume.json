@@ -27,6 +27,7 @@
       "startDate": "2023-10",
       "highlights": [
         "Teaching support: Information Visualization and Visual Analytics (Summer 2024; Winter 2024/25, 2025/26)",
+        "Teaching support: Programming for Media Informatics (Winter 2026/27)",
         "Teaching support: Bachelor Seminar (Summer 2024, 2025)",
         "Teaching support: Master Seminar (Summer 2026)"
       ]
@@ -90,6 +91,12 @@
     {
       "organization": "Mensch und Computer (MuC)",
       "position": "Student Volunteer Co-Chair; External Reviewer",
+      "startDate": "2026",
+      "endDate": "2026"
+    },
+    {
+      "organization": "ACM Interactive Surfaces and Spaces Conference (ISS)",
+      "position": "External Reviewer",
       "startDate": "2026",
       "endDate": "2026"
     },

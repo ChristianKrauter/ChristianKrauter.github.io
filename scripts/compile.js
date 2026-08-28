@@ -391,27 +391,27 @@ function createCvPageHtml(resume) {
 
         <h2 class="yearHeading">Academic Volunteering</h2>
         ${cvTimelineHtml(volunteer.map(v => ({
-      date: cvDateRange(v.startDate, v.endDate),
-      title: v.position,
-      subtitle: v.organization
-    })), { plainDate: true })}
+    date: cvDateRange(v.startDate, v.endDate),
+    title: v.position,
+    subtitle: v.organization
+  })), { plainDate: true })}
 
         <h2 class="yearHeading">Student Supervision</h2>
         ${cvTimelineHtml(projects.flatMap(p => {
-      const type = supervisionTypeLabels[p.name] || p.name
-      return p.highlights.map(h => {
-        const entry = parseSupervisionEntry(h)
-        return { date: entry.date, title: `${entry.name} <span class="cvGloss">(${type})</span>`, subtitle: entry.title }
-      })
-    }).sort(cvOngoingFirst), { plainDate: true })}
+    const type = supervisionTypeLabels[p.name] || p.name
+    return p.highlights.map(h => {
+      const entry = parseSupervisionEntry(h)
+      return { date: entry.date, title: `${entry.name} <span class="cvGloss">(${type})</span>`, subtitle: entry.title }
+    })
+  }).sort(cvOngoingFirst), { plainDate: true })}
 
         <h2 class="yearHeading">Employment</h2>
         ${cvTimelineHtml(work.map(w => ({
-      date: cvDateRange(w.startDate, w.endDate),
-      title: w.position,
-      subtitle: w.name,
-      items: w.highlights
-    })))}
+    date: cvDateRange(w.startDate, w.endDate),
+    title: w.position,
+    subtitle: w.name,
+    items: w.highlights
+  })))}
       </article>
       ${footer('..')}
     </div>
@@ -848,7 +848,8 @@ function headerAndNav(path = '.', pageType) {
   </header>
 </div>
 <script src="${path}/assets/js/theme-toggle.js" defer></script>
-<script src="${path}/assets/js/nav-toggle.js" defer></script>`
+<script src="${path}/assets/js/nav-toggle.js" defer></script>
+<script data-goatcounter="https://ckrauter.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>`
 }
 
 /**
