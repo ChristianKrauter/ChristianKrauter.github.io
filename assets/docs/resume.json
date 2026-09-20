@@ -183,7 +183,7 @@
     {
       "title": "'Leadership Legend' (student volunteer)",
       "date": "2024",
-      "awarder": "Mensch und Computer"
+      "awarder": "Mensch und Computer (MuC)"
     },
     {
       "title": "'Most Nominations for Awards' (student volunteer)",
@@ -197,6 +197,7 @@
   ],
   "interests": [
     { "name": "Human-Computer Interaction" },
+    { "name": "Future Mobile Devices" },
     { "name": "Augmented/Virtual Reality" },
     { "name": "Information Visualization" },
     { "name": "Motorcycles" },
