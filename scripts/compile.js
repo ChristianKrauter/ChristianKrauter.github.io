@@ -40,6 +40,12 @@ const aboutConfig = JSON.parse(readFileSync('./assets/docs/about.json').toString
 // Load repositories
 const repositoriesConfig = JSON.parse(readFileSync('./assets/docs/repositories.json').toString())
 
+// Load gallery photo captions, keyed by filename (used for alt text)
+const galleryCaptions = JSON.parse(readFileSync('./assets/docs/gallery-captions.json').toString())
+
+// Load publication teaser image captions, keyed by citation key (used for alt text)
+const teaserCaptions = JSON.parse(readFileSync('./assets/docs/teaser-captions.json').toString())
+
 // Load CV (JSON Resume format, see https://jsonresume.org/schema/)
 const resume = JSON.parse(readFileSync('./assets/docs/resume.json').toString())
 
@@ -219,7 +225,7 @@ function createRepositoriesPageHtml(repositories) {
           class="publicationImage"
           loading="lazy"
           src="../assets/img/repos/${r.image}"
-          alt="Preview of ${r.name}"
+          alt="${r.imageAlt || `Preview of ${r.name}`}"
         />
       </a>` : ''}
     <div class="metaData">
@@ -279,8 +285,6 @@ function createGalleryPageHtml(galleryImages) {
 }
 
 /**
- * Derives alt text for a gallery photo from its filename, since there's no
- * per-photo caption data
  * Creates the 404 page HTML, served by GitHub Pages for any unmatched URL.
  * Uses an empty path prefix (absolute links, e.g. "/style.css") rather than
  * the usual '.'/'..' since the page can be served while the browser shows a
@@ -310,10 +314,14 @@ function createNotFoundPageHtml() {
   updateFile('./404.html', html)
 }
 
+/**
+ * Returns alt text for a gallery photo: the caption from gallery-captions.json
+ * if one exists, otherwise a fallback derived from the filename
  * @param {string} file gallery image filename
  * @returns {string} alt text
  */
 function galleryImageAlt(file) {
+  if (galleryCaptions[file]) return galleryCaptions[file]
   const stem = file.slice(0, file.lastIndexOf('.'))
   return `Photo: ${stem.charAt(0).toUpperCase()}${stem.slice(1)}`
 }
@@ -623,7 +631,7 @@ function createPublicationsHtml(publications) {
           class="publicationImage"
           loading="lazy"
           src="${image}"
-          alt="Teaser image for ${pub['TITLE']}"
+          alt="${teaserCaptions[key] || `Teaser image for ${pub['TITLE']}`}"
         />
       </a>`
         : ''
@@ -743,7 +751,7 @@ function createPublicationPageHtml(pub) {
             <div class="pubPageContent">
               ${imageExists ? `
               <a href="../assets/img/teaser/${key}.png" target="_blank" title="show image full size">
-                <img class="teaser" id="image${key}" src="../assets/img/teaser/${key}.png" alt="Teaser image for ${title}"/>${srOnlyText}
+                <img class="teaser" id="image${key}" src="../assets/img/teaser/${key}.png" alt="${teaserCaptions[key] || `Teaser image for ${title}`}"/>${srOnlyText}
               </a>` : ''}
               <div>
                 <div class="authors">
@@ -993,7 +1001,8 @@ function reportMissingOrExtraInfo(publications) {
   let missingPdfFileGotLink = false
   let missingData = {
     publication: [],
-    pdfIsLink: false
+    pdfIsLink: false,
+    images: []
   }
 
   // Function to add an item to one of the two lists for a given key
@@ -1003,6 +1012,8 @@ function reportMissingOrExtraInfo(publications) {
       missingData.publication.push(item)
     } else if (list === 'pdfIsLink') {
       missingData.pdfIsLink = true
+    } else if (list === 'images') {
+      missingData.images.push(item)
     } else {
       console.error("Invalid list:", list)
     }
@@ -1045,6 +1056,8 @@ function reportMissingOrExtraInfo(publications) {
     if (!allTeasers.has(`${key}.png`)) {
       missingFiles = true
       addMissing('publication', `${key} is missing a teaser image`)
+    } else if (!teaserCaptions[key]) {
+      addMissing('images', `${key} teaser image is missing a description`)
     }
     // Publication PDF
     let pdfLink = pub['PDF']
@@ -1068,13 +1081,35 @@ function reportMissingOrExtraInfo(publications) {
     }
   }
 
+  // Missing gallery photo descriptions
+  for (const file of allGalleryImages) {
+    if (!galleryCaptions[file]) {
+      addMissing('images', `${file} gallery photo is missing a description`)
+    }
+  }
+
+  // Missing repository image descriptions
+  for (const repo of repositoriesConfig) {
+    if (repo.image && allRepoImages.has(repo.image) && !repo.imageAlt) {
+      addMissing('images', `${repo.name} repository image is missing a description`)
+    }
+  }
+
   // Create Report
-  if (missingData.publication.length > 0) {
+  if (missingData.publication.length > 0 || missingData.images.length > 0) {
     console.log(`\n\nmissing files:\n`)
-    console.log('  Publications:')
-    missingData.publication.forEach(info => {
-      console.log('    ' + info)
-    })
+    if (missingData.publication.length > 0) {
+      console.log('  Publications:')
+      missingData.publication.forEach(info => {
+        console.log('    ' + info)
+      })
+    }
+    if (missingData.images.length > 0) {
+      console.log('  Images:')
+      missingData.images.forEach(info => {
+        console.log('    ' + info)
+      })
+    }
   }
 }
 
