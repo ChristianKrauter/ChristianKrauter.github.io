@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      (function () {
+        var stored = localStorage.getItem('theme')
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        document.documentElement.setAttribute('data-theme', theme)
+      })()
+    </script>
+
+    <title>Page Not Found - Chris Krauter</title>
+    
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="shortcut icon" href="/assets/img/misc/favicon.png">
+    <link rel="icon" type="image/png" href="/assets/img/misc/favicon.png" sizes="256x256">
+    <link rel="apple-touch-icon" sizes="256x256" href="/assets/img/misc/favicon.png">
+
+    <!-- OG Metadata -->
+    <meta property="og:site_name" content="Chris Krauter" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Chris Krauter" />
+    <meta property="og:url" content="https://chriskrauter.de/" />
+    <meta property="og:description" content="Personal website of Chris Krauter" />
+    <meta property="og:image" content="https://chriskrauter.de/assets/img/misc/link_preview.jpg" />
+    <meta property="og:locale" content="EN" />
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title"  content="Chris Krauter" />
+    <meta name="twitter:description" content="Personal website of Chris Krauter" />
+    <meta name="twitter:image" content="https://chriskrauter.de/assets/img/misc/ck.jpg" />
+  </head>
+  
+
+<body>
+  <main>
+    
+  <div>
+  <header>
+    <div class="headerInner">
+      <button type="button" class="navToggle" onclick="toggleNav()" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation menu">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <div class="siteName">Chris Krauter</div>
+      <nav id="siteNav">
+        <ul>
+          <li><a href="/">about</a></li>
+          <li><a href="/pages/publications.html">publications</a></li>
+          <li><a href="/pages/repositories.html">repositories</a></li>
+          <li><a href="/pages/gallery.html">photos</a></li>
+          <li><a href="/pages/cv.html">cv</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="themeToggle" onclick="toggleTheme()" aria-label="Switch to dark mode">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+</div>
+<script src="/assets/js/theme-toggle.js" defer></script>
+<script src="/assets/js/nav-toggle.js" defer></script>
+<script data-goatcounter="https://ckrauter.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <div class="pageContent">
+      <article>
+        <div class="notFoundWrap">
+          <div class="notFoundGhost" aria-hidden="true">404</div>
+          <h1 class="title">Page not found</h1>
+          <p class="notFoundSub">The link may be broken, or the page may have moved.</p>
+          <a class="notFoundBtn" href="/">Back to homepage</a>
+        </div>
+      </article>
+      
+<footer class="siteFooter" style="text-align: center">
+  © 2026 Chris Krauter. Hosted by GitHub Pages. Analytics by GoatCounter. Last updated: September 25, 2026.
+</footer>
+    </div>
+  </main>
+</body>
+
+</html>

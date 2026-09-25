@@ -983,3 +983,53 @@ a[href*=".mp4" i][href*="visvar.github.io"]::after {
     padding-left: 30px;
   }
 }
+
+/*
+ *
+ * 404 page
+ *
+ */
+.notFoundWrap {
+  text-align: center;
+  max-width: 480px;
+  margin: 40px auto 0;
+}
+
+/* oversized, low-opacity numeral sitting behind the heading */
+.notFoundGhost {
+  font-size: 150px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--linkColor);
+  opacity: 0.15;
+  margin-bottom: -46px;
+  user-select: none;
+}
+
+.notFoundSub {
+  color: var(--textColor2);
+  margin-bottom: 24px;
+}
+
+/* the :visited case is repeated because a:visited (element+pseudo-class) is
+   more specific than a lone .notFoundBtn class, so without it, a visited
+   link would fall back to --linkColor text on a --linkColor background */
+.notFoundBtn,
+.notFoundBtn:visited {
+  display: inline-block;
+  padding: 9px 22px;
+  border-radius: 999px;
+  /* accent-green fill with body-background text: guaranteed to contrast,
+     since the two are always opposite polarity between light/dark themes */
+  background: var(--linkColor);
+  color: var(--bodyBgColor);
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.notFoundBtn:hover,
+.notFoundBtn:focus-visible {
+  text-decoration: none;
+  opacity: 0.85;
+  transform: translateY(-2px);
+}

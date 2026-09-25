@@ -132,6 +132,9 @@ async function createPages() {
   // CV page
   createCvPageHtml(resume)
 
+  // 404 page
+  createNotFoundPageHtml()
+
   // Publication pages
   for (const pub of publications) {
     createPublicationPageHtml(pub)
@@ -278,6 +281,35 @@ function createGalleryPageHtml(galleryImages) {
 /**
  * Derives alt text for a gallery photo from its filename, since there's no
  * per-photo caption data
+ * Creates the 404 page HTML, served by GitHub Pages for any unmatched URL.
+ * Uses an empty path prefix (absolute links, e.g. "/style.css") rather than
+ * the usual '.'/'..' since the page can be served while the browser shows a
+ * URL at any depth (e.g. /pub/foo), where relative links would break.
+ */
+function createNotFoundPageHtml() {
+  const html = `${htmlHead(`Page Not Found - ${pageTitle}`, '')}
+
+<body>
+  <main>
+    ${headerAndNav('', 'notfound')}
+    <div class="pageContent">
+      <article>
+        <div class="notFoundWrap">
+          <div class="notFoundGhost" aria-hidden="true">404</div>
+          <h1 class="title">Page not found</h1>
+          <p class="notFoundSub">The link may be broken, or the page may have moved.</p>
+          <a class="notFoundBtn" href="/">Back to homepage</a>
+        </div>
+      </article>
+      ${footer('')}
+    </div>
+  </main>
+</body>
+
+</html>`
+  updateFile('./404.html', html)
+}
+
  * @param {string} file gallery image filename
  * @returns {string} alt text
  */
