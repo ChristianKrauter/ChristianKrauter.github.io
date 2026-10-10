@@ -826,8 +826,6 @@ function htmlHead(title, path = '.') {
     <title>${title}</title>
     
     <link rel="stylesheet" href="${path}/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="shortcut icon" href="${path}/assets/img/misc/favicon.png">
     <link rel="icon" type="image/png" href="${path}/assets/img/misc/favicon.png" sizes="256x256">
     <link rel="apple-touch-icon" sizes="256x256" href="${path}/assets/img/misc/favicon.png">

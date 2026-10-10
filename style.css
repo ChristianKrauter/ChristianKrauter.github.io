@@ -1033,3 +1033,75 @@ a[href*=".mp4" i][href*="visvar.github.io"]::after {
   opacity: 0.85;
   transform: translateY(-2px);
 }
+
+/*
+ *
+ * Icons (self-hosted, subset of Font Awesome Free + Academicons)
+ *
+ * Only the handful of glyphs actually used on the site are kept - see
+ * scripts/subset-icons.js, which regenerates assets/fonts/*.woff2 from the
+ * full upstream font files. Re-run `npm run subsetIcons` after adding or
+ * removing an icon class below.
+ *
+ */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("./assets/fonts/fa-solid-900.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("./assets/fonts/fa-brands-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Academicons';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("./assets/fonts/academicons.woff2") format("woff2");
+}
+
+.fas,
+.fab,
+.ai {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fas {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+
+.fab {
+  font-family: 'Font Awesome 6 Brands';
+  font-weight: 400;
+}
+
+.ai {
+  font-family: 'Academicons';
+}
+
+.fa-bars::before { content: "\f0c9"; }
+.fa-envelope::before { content: "\f0e0"; }
+.fa-sun::before { content: "\f185"; }
+.fa-link::before { content: "\f0c1"; }
+.fa-moon::before { content: "\f186"; }
+.fa-linkedin::before { content: "\f08c"; }
+.fa-github::before { content: "\f09b"; }
+.ai-dblp::before { content: "\e94f"; }
+.ai-google-scholar::before { content: "\e9d4"; }
+.ai-orcid::before { content: "\e9d9"; }
+.ai-researchgate::before { content: "\e95e"; }
