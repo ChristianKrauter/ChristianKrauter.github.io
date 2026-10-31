@@ -2,6 +2,10 @@
 // row's photos fill the container width at a shared height. Unlike a
 // column layout, this never crops a photo - only its displayed size changes.
 const GALLERY_TARGET_ROW_HEIGHT = 320
+// below this, a row closes early (leaving its last item for the next row)
+// instead of shrinking further - otherwise rows packed with portrait photos
+// can squeeze in one more image and end up much shorter than the target
+const GALLERY_MIN_ROW_HEIGHT = 260
 const GALLERY_GAP = 14
 // how far a leftover row can stretch before folding into the previous row
 const GALLERY_MAX_LAST_ROW_SCALE = 1.4
@@ -28,6 +32,20 @@ function layoutGallery() {
     const aspect = parseFloat(item.dataset.aspect)
     const widthAtTargetHeight = GALLERY_TARGET_ROW_HEIGHT * aspect
 
+    // would adding this item shrink the row below the minimum height? close
+    // the row now (without it) instead - a row that isn't full yet always
+    // scales up to at least the target height
+    if (!isMobile && currentRow.length > 0) {
+      const prospectiveGapsWidth = currentRow.length * GALLERY_GAP
+      const prospectiveWidth = currentRowWidth + widthAtTargetHeight
+      const prospectiveScale = (containerWidth - prospectiveGapsWidth) / prospectiveWidth
+      if (prospectiveScale * GALLERY_TARGET_ROW_HEIGHT < GALLERY_MIN_ROW_HEIGHT) {
+        rows.push(currentRow)
+        currentRow = []
+        currentRowWidth = 0
+      }
+    }
+
     currentRow.push({ item, widthAtTargetHeight })
     currentRowWidth += widthAtTargetHeight
 
@@ -39,16 +57,46 @@ function layoutGallery() {
     }
   })
   if (currentRow.length > 0) {
-    const gapsWidth = (currentRow.length - 1) * GALLERY_GAP
-    const naturalWidth = currentRow.reduce((sum, r) => sum + r.widthAtTargetHeight, 0)
-    const scale = (containerWidth - gapsWidth) / naturalWidth
-
-    // fold an excessively-stretched leftover row into the previous one - a
-    // moderate stretch is fine and looks intentional
-    if (rows.length > 0 && !isMobile && scale > GALLERY_MAX_LAST_ROW_SCALE) {
-      rows[rows.length - 1].push(...currentRow)
-    } else {
+    if (isMobile || rows.length === 0) {
       rows.push(currentRow)
+    } else {
+      // the leftover row is too small to fill the width on its own. Rather
+      // than always folding it whole into the previous row - which can push
+      // that row below the minimum height - try a few ways to split the
+      // last two rows and keep whichever is least bad (stays in bounds, or
+      // misses by the smallest amount)
+      const prevRow = rows[rows.length - 1]
+
+      const rowHeight = row => {
+        const gapsWidth = (row.length - 1) * GALLERY_GAP
+        const naturalWidth = row.reduce((sum, r) => sum + r.widthAtTargetHeight, 0)
+        return GALLERY_TARGET_ROW_HEIGHT * (containerWidth - gapsWidth) / naturalWidth
+      }
+      const maxRowHeight = GALLERY_TARGET_ROW_HEIGHT * GALLERY_MAX_LAST_ROW_SCALE
+      const badness = height => height < GALLERY_MIN_ROW_HEIGHT
+        ? GALLERY_MIN_ROW_HEIGHT - height
+        : Math.max(0, height - maxRowHeight)
+
+      const candidates = [
+        // leave them as two separate rows
+        { split: [prevRow, currentRow], score: badness(rowHeight(prevRow)) + badness(rowHeight(currentRow)) },
+        // fold the leftover entirely into the previous row
+        { split: [[...prevRow, ...currentRow]], score: badness(rowHeight([...prevRow, ...currentRow])) },
+      ]
+      if (prevRow.length > 1) {
+        // move the last photo of the previous row into the leftover row,
+        // balancing both instead of leaving one full and one half-empty
+        const shrunkPrevRow = prevRow.slice(0, -1)
+        const grownCurrentRow = [prevRow[prevRow.length - 1], ...currentRow]
+        candidates.push({
+          split: [shrunkPrevRow, grownCurrentRow],
+          score: badness(rowHeight(shrunkPrevRow)) + badness(rowHeight(grownCurrentRow)),
+        })
+      }
+
+      const best = candidates.reduce((a, b) => (b.score < a.score ? b : a))
+      rows[rows.length - 1] = best.split[0]
+      if (best.split[1]) rows.push(best.split[1])
     }
   }
 
